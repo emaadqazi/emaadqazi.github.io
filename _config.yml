@@ -10,6 +10,7 @@ plugins:
 
 # Optional: Customize the theme
 github:
+  repository_name: "Emaad Qazi"
   repository_url: https://github.com/emaadqazi/emaadqazi.github.io
   
 # Optional: Social links (if supported by theme)
