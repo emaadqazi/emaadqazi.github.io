@@ -1,7 +1,7 @@
 title: Emaad Qazi
 description: Full Stack Developer  # Add a description
 # logo: assets/img/logo.png  # Uncomment and add path if you have a logo
-show_downloads: true
+# show_downloads: true
 
 remote_theme: pages-themes/hacker@v0.2.0
 
