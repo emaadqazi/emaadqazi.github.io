@@ -709,6 +709,15 @@ body {
     min-height: 120px;
 }
 
+/* Contact form button specific styling */
+.contact-form .btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
 /* Footer */
 .footer {
     background: var(--bg-secondary);
