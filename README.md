@@ -156,10 +156,3 @@ emaadqazi.github.io/
 
 This project is based on the Dimension template by HTML5 UP, modified for modern portfolio use.
 
-## 🤝 Contributing
-
-Feel free to fork this project and customize it for your own portfolio. Please credit the original template if you use this as a base.
-
----
-
-**Built with ❤️ by Emaad Qazi** 
