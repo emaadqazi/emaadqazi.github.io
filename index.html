@@ -1,469 +1,445 @@
 <!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Emaad Qazi's Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Emaad Qazi - Fullstack Developer Portfolio" />
+    <title>Emaad Qazi - Fullstack Developer</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/modern.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload" data-theme="dark">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">EMAAD QAZI</a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
 
-				<!-- Header -->
-					<header id="header">
-						<div class="content">
-							<div class="inner">
-								<h1>EMAAD QAZI</h1>
-								<p>Fullstack Developer</p>
-								<img src="images/LinkedInPicture.jpg" alt="LinkedIn Photo" style="width:350px; height:350px; border-radius:10px; margin-bottom: 1em;" />
-								<div style="margin-top: 1em; text-align: center;">
-									<a href="mailto:qaziemaad@gmail.com" target="_blank" style="margin-right: 15px;">
-										<img src="images/MailLogo.png" alt="Mail" style="height:2em; vertical-align: middle; border-radius:5px; filter: grayscale(100%); margin-left: 0px; margin-right: 0px;" />
-									</a>
-									<a href="https://github.com/emaadqazi" target="_blank" style="margin-right: 15px;">
-										<span class="icon brands fa-github" style="font-size:2em; vertical-align: middle;"></span>
-									</a>
-									<a href="https://www.linkedin.com/in/emaadqazi" target="_blank" style="margin-right: 15px;">
-										<span class="icon brands fa-linkedin" style="font-size:2em; vertical-align: middle;"></span>
-									</a>
-									<a href="https://devpost.com/qaziemaad?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav" target="_blank">
-										<img src="images/DevpostIMG.jpg" alt="Devpost" style="height:2em; vertical-align: middle; border-radius:5px; filter: grayscale(100%); margin-left: 0px; margin-right: 0px;" />
-									</a>
-								</div>
-							</div>
-						</div>
-						<nav>
-							<ul>
-								<li><a href="#about">About</a></li>
-								<li><a href="#work">Projects</a></li>
-								<li><a href="#experience">Experience</a></li>
-								<!-- <li><a href="#contact">Contact</a></li> -->
-								<!--<li><a href="#elements">Elements</a></li>-->
-							</ul>
-						</nav>
-					</header>
+        </div>
+    </nav>
 
-				<!-- Main -->
-					<div id="main">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="greeting">Hello, I'm</span>
+                        <span class="name">Emaad Qazi</span>
+                        <span class="title">Fullstack Developer</span>
+                    </h1>
+                    <p class="hero-description">
+                        Bridging technology and business strategy to create impactful solutions
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/LinkedInPicture.jpg" alt="Emaad Qazi" class="profile-image" />
+                </div>
+            </div>
+            <div class="hero-social">
+                <a href="mailto:qaziemaad@gmail.com" target="_blank" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://github.com/emaadqazi" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/emaadqazi" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://devpost.com/qaziemaad" target="_blank" class="social-link">
+                    <i class="fas fa-code"></i>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
 
-						<!-- About -->
-							<article id="about">
-								<div style="display: flex; flex-direction: column; align-items: center;">
-									<h2 class="major" style="text-align:center; width:100%;">About</h2>
-									<img src="images/GithubPFP.png" alt="About Photo" style="width:300px; height:300px; border-radius:50%; object-fit:cover; margin-bottom:2em; box-shadow:0 2px 8px rgba(0,0,0,0.10);" />
-									<p style="max-width: 600px; text-align: center; font-size: 1.1em; margin: 0 auto;"> Hey! My name is Emaad and I am a 3A Double Degree student in Business Administration and Computer Science @ Wilfrid Laurier University, planning to specialize in Finance and Machine Learning/AI.</p>
-									<p style="max-width: 600px; text-align: center; font-size: 1.1em; margin: 0 auto;"> I am currently on my first co-op term at Samsung where I am doing Supply Chain Management Operations in the Consumer Electronics division.</p>
-									<p style="max-width: 600px; text-align: center; font-size: 1.1em; margin: 0 auto;"> I'm passionate about bridging the gap between technology and business strategy. By combining my growing expertise in software development with my business background, I'm focused on creating solutions that don't just work technically, but drive real organizational impact and innovation.</p>
-									<p style="max-width: 600px; text-align: center; font-size: 1.1em; margin: 0 auto;"> Most recently, my team was able to place 2nd amongst 190+ other teams in the Hack Track @ Spurhacks 2025, in Waterloo. I will also be attending HackThe6ix in York on the July 20th weekend, as well as IgnitionHacks at TMU on the August 15th weekend!</p>
-									<p style="max-width: 600px; text-align: center; font-size: 1.1em; margin: 0 auto;"> Beyond tech & business, I'm deeply passionate about fitness and strength training. With over 10 years of experience played competitive basketball in Canada, it has become a cornerstone in my life. </p>
-								</div>
-							</article>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right">
+                    <img src="images/GithubPFP.png" alt="Emaad Qazi" class="about-img" />
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <p class="about-bio">
+                        Hey! My name is Emaad and I am a 3A Double Degree student in Business Administration and Computer Science @ Wilfrid Laurier University, planning to specialize in Finance and Machine Learning/AI.
+                    </p>
+                    <p class="about-bio">
+                        I am currently on my first co-op term at Samsung where I am doing Supply Chain Management Operations in the Consumer Electronics division.
+                    </p>
+                    <p class="about-bio">
+                        I'm passionate about bridging the gap between technology and business strategy. By combining my growing expertise in software development with my business background, I'm focused on creating solutions that don't just work technically, but drive real organizational impact and innovation.
+                    </p>
+                    <p class="about-bio">
+                        Most recently, my team was able to place 2nd amongst 190+ other teams in the Hack Track @ Spurhacks 2025, in Waterloo. I will also be attending HackThe6ix in York on the July 20th weekend, as well as IgnitionHacks at TMU on the August 15th weekend!
+                    </p>
+                    <p class="about-bio">
+                        Beyond tech & business, I'm deeply passionate about fitness and strength training. With over 10 years of experience played competitive basketball in Canada, it has become a cornerstone in my life.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-						<!-- Projects Section at the Top -->
-						<article id="work">
-							<h2 class="major" style="text-align:center; letter-spacing:0.1em; margin-left:auto; margin-right:auto;">Projects</h2>
-							<div class="projects-list" style="width:100%; max-width:1000px; margin:auto;">
-								<div class="project-card" style="padding:2em; font-size:1.1em; position:relative; background:rgba(255,255,255,0.02); border-radius:16px; margin-bottom:2em; box-shadow:0 2px 8px rgba(0,0,0,0.05); max-width:98%; margin-left:auto; margin-right:auto; min-height:600px;">
-									<h3 style="font-size:2em; margin-bottom:0.7em; font-weight:700; color:#bbb; text-align:center; letter-spacing:0.12em; text-transform:uppercase; font-family: 'Montserrat', 'Arial', sans-serif;">Fitness Tracker</h3>
-									<img src="images/FitnessTrackerProject.png" alt="Fitness Tracker Screenshot" style="width:100%; max-width:1100px; height:420px; display:block; margin:auto; border-radius:18px; margin-bottom:1.2em; object-fit:cover;" />
-									<p class="project-desc" style="margin-bottom:1em; text-align:center; font-family: 'Montserrat', 'Arial', sans-serif; letter-spacing:0.08em; font-weight:500;">Full Stack Fitness Web Application</p>
-									<p class="project-tech" style="margin-bottom:1.5em; text-align:center; font-family: 'Montserrat', 'Arial', sans-serif; letter-spacing:0.08em; font-weight:500;">Technologies Used: <em style='font-family: inherit;'>Flask, Supabase, SQLAlchemy, Bootstrap 5, Jinja2, Chart.js, Render, HTML5, CSS3</em></p>
-									<div style="display:flex; justify-content:center; gap:2em; align-items:center; margin-top:2.5em; margin-bottom:0;">
-										<a href="https://fitness-tracker-ezp6.onrender.com/" target="_blank" style="color:#fff; text-decoration:none; display:flex; align-items:center; border:none; box-shadow:none;">
-											<img src="images/LiveLinkIcon.png" alt="Live Link" style="height:2em; width:2em; object-fit:contain; display:block; border:none; box-shadow:none;" />
-										</a>
-										<a href="https://github.com/emaadqazi/Fitness-Tracker" target="_blank" style="color:#fff; text-decoration:none; border:none; box-shadow:none;">
-											<span class="icon brands fa-github" style="font-size:2em; border:none; box-shadow:none;"></span>
-										</a>
-									</div>
-									<span class="project-date" style="display:block; text-align:right; font-size:0.9em; color:#888; opacity:0.7; letter-spacing:0.08em; margin-top:1em;">March 2025 - June 2025</span>
-								</div>
-								<div class="project-card" style="padding:2em; font-size:1.1em; position:relative; background:rgba(255,255,255,0.02); border-radius:16px; margin-bottom:2em; box-shadow:0 2px 8px rgba(0,0,0,0.05); max-width:98%; margin-left:auto; margin-right:auto; min-height:600px;">
-									<h3 style="font-size:2em; margin-bottom:0.7em; font-weight:700; color:#bbb; text-align:center; letter-spacing:0.12em; text-transform:uppercase; font-family: 'Montserrat', 'Arial', sans-serif;">FitQuest</h3>
-									<img src="images/FitQuestProject.png" alt="FitQuest Screenshot" style="width:100%; max-width:1100px; height:420px; display:block; margin:auto; border-radius:18px; margin-bottom:1.2em; object-fit:cover;" />
-									<p class="project-desc" style="margin-bottom:1em; text-align:center; font-family: 'Montserrat', 'Arial', sans-serif; letter-spacing:0.08em; font-weight:500;">Full Stack Gen AI Web Application built with MERN @ Spurhacks 2025</p>
-									<p class="project-tech" style="margin-bottom:1.5em; text-align:center; font-family: 'Montserrat', 'Arial', sans-serif; letter-spacing:0.08em; font-weight:500;">Technologies Used: <em style='font-family: inherit;'>MongoDB, Express.js, Node.js, React, Railway, Gemini, MediaPipe</em></p>
-									<p style="text-align:center; font-family: 'Montserrat', 'Arial', sans-serif; letter-spacing:0.08em; font-weight:700; font-style:italic; text-decoration:underline; margin-bottom:1.5em;">2nd Place Hack Track - $2500 (190+ teams)</p>
-									<div style="display:flex; justify-content:center; gap:2em; align-items:center; margin-top:2.5em; margin-bottom:0;">
-										<a href="https://algorithmathletes-production.up.railway.app/login" target="_blank" style="color:#fff; text-decoration:none; display:flex; align-items:center; border:none; box-shadow:none;">
-											<img src="images/LiveLinkIcon.png" alt="Live Link" style="height:2em; width:2em; object-fit:contain; display:block; border:none; box-shadow:none;" />
-										</a>
-										<a href="https://github.com/AhmadYahya-05/AlgorithmAthletes" target="_blank" style="color:#fff; text-decoration:none; border:none; box-shadow:none;">
-											<span class="icon brands fa-github" style="font-size:2em; border:none; box-shadow:none;"></span>
-										</a>
-									</div>
-									<span class="project-date" style="display:block; text-align:right; font-size:0.9em; color:#888; opacity:0.7; letter-spacing:0.08em; margin-top:1em;">June 20th Weekend, 2025</span>
-								</div>
-								<div class="project-card" style="padding:2em; font-size:1.1em; position:relative; background:rgba(255,255,255,0.02); border-radius:16px; margin-bottom:2em; box-shadow:0 2px 8px rgba(0,0,0,0.05); max-width:98%; margin-left:auto; margin-right:auto; min-height:600px;">
-									<h3 style="font-size:2em; margin-bottom:0.7em; font-weight:700; color:#bbb; text-align:center; letter-spacing:0.12em; text-transform:uppercase; font-family: 'Montserrat', 'Arial', sans-serif;">Notes App</h3>
-									<img src="images/MernNotesProject.png" alt="Notes App Screenshot" style="width:100%; max-width:1100px; height:420px; display:block; margin:auto; border-radius:18px; margin-bottom:1.2em; object-fit:none; object-position:left center; background:#181a1b;" />
-									<p class="project-desc" style="margin-bottom:1em; text-align:center; font-family: 'Montserrat', 'Arial', sans-serif; letter-spacing:0.08em; font-weight:500;">Notes App built with MERN & deployed on Render</p>
-									<p class="project-tech" style="margin-bottom:1.5em; text-align:center; font-family: 'Montserrat', 'Arial', sans-serif; letter-spacing:0.08em; font-weight:500;">Technologies Used: <em style='font-family: inherit;'>MongoDB, Express.js, Node.js, React, Render, Javascript </em></p>
-									<div style="display:flex; justify-content:center; gap:2em; align-items:center; margin-top:2.5em; margin-bottom:0;">
-										<a href="https://notesmernstack.onrender.com/" target="_blank" style="color:#fff; text-decoration:none; display:flex; align-items:center; border:none; box-shadow:none;">
-											<img src="images/LiveLinkIcon.png" alt="Live Link" style="height:2em; width:2em; object-fit:contain; display:block; border:none; box-shadow:none;" />
-										</a>
-										<a href="https://github.com/emaadqazi/NotesMERNStack" target="_blank" style="color:#fff; text-decoration:none; border:none; box-shadow:none;">
-											<span class="icon brands fa-github" style="font-size:2em; border:none; box-shadow:none;"></span>
-										</a>
-									</div>
-									<span class="project-date" style="display:block; text-align:right; font-size:0.9em; color:#888; opacity:0.7; letter-spacing:0.08em; margin-top:1em;">June 2025</span>
-								</div>
-								<!-- Add more project-card divs for each project -->
-							</div>
-						</article>
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+            <div class="projects-grid">
+                <!-- Fitness Tracker Project -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image">
+                        <img src="images/FitnessTrackerProject.png" alt="Fitness Tracker" />
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://fitness-tracker-ezp6.onrender.com/" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/emaadqazi/Fitness-Tracker" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Fitness Tracker</h3>
+                        <p class="project-description">Full Stack Fitness Web Application</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">Supabase</span>
+                            <span class="tech-tag">SQLAlchemy</span>
+                            <span class="tech-tag">Bootstrap 5</span>
+                            <span class="tech-tag">Chart.js</span>
+                        </div>
+                        <span class="project-date">March 2025 - June 2025</span>
+                    </div>
+                </div>
 
-						<!-- Experience -->
-							<article id="experience">
-								<h2 class="major" style="text-align:center; letter-spacing:0.1em; margin-left:auto; margin-right:auto;">Experience</h2>
-								<div class="experience-list" style="width:100%; max-width:1000px; margin:auto;">
-									<div class="experience-card" style="padding:2em; font-size:1.1em; position:relative; background:rgba(255,255,255,0.02); border-radius:16px; margin-bottom:2em; box-shadow:0 2px 8px rgba(0,0,0,0.05); max-width:98%; margin-left:auto; margin-right:auto; min-height:200px;">
-										<div style="display:flex; align-items:center; gap:2em; margin-bottom:1em;">
-											<img src="images/SamsungLogo.png" alt="Company Logo" style="height:96px; width:96px; object-fit:cover; border-radius:50%; background:#181a1b; display:block;" />
-											<span style="font-size:1.2em; font-weight:600; font-family: 'Montserrat', 'Arial', sans-serif; letter-spacing:0.08em; color:#bbb;">Samsung Electronics Canada</span>
-										</div>
-										<h3 style="font-size:1.1em; font-weight:700; color:#bbbbbb; letter-spacing:0.05em; text-transform:uppercase; font-family: 'Montserrat', 'Arial', sans-serif; margin-bottom:0.7em;">SCM Operations Co-op - CE Division</h3>
-										<ul style="font-family: 'Montserrat', 'Arial', sans-serif; font-size:1em; margin-bottom:2.5em; color:#eee; letter-spacing:0.08em; font-weight:500;">
-											<li>Managed daily data pipeline operations through SQL table refreshes and Power Query automation, providing essential reporting to 200+ stakeholders across a $350M+ monthly business division</li>
-											<li>Developed and implemented VBA automation script for cross-shipping operations between East/West warehouses, reducing manual processing time by 200+ hours monthly in HE division</li>
-											<li>Built automated KPI dashboard using VBA and Power Query for DA Sales KAM team, improving forecast accuracy by 27% through real-time data integration</li>
-										</ul>
-										<span style="display:block; text-align:right; font-size:0.9em; color:#888; opacity:0.7; letter-spacing:0.08em; margin-top:1em;">May 2025 - Present</span>
-									</div>
-									<div class="experience-card" style="padding:2em; font-size:1.1em; position:relative; background:rgba(255,255,255,0.02); border-radius:16px; margin-bottom:2em; box-shadow:0 2px 8px rgba(0,0,0,0.05); max-width:98%; margin-left:auto; margin-right:auto; min-height:200px;">
-										<div style="display:flex; align-items:center; gap:2em; margin-bottom:1em;">
-											<img src="images/LSCALogo.jpg" alt="Company Logo" style="height:96px; width:96px; object-fit:cover; border-radius:50%; background:#181a1b; display:block;" />
-											<span style="font-size:1.1em; font-weight:600; font-family: 'Montserrat', 'Arial', sans-serif; letter-spacing:0.08em; color:#bbb;">Laurier Supply Chain Association</span>
-										</div>
-										<h3 style="font-size:1em; font-weight:700; color:#bbb; letter-spacing:0.05em; text-transform:uppercase; font-family: 'Montserrat', 'Arial', sans-serif; margin-bottom:0.7em;">VP of Software Development</h3>
-										<ul style="font-family: 'Montserrat', 'Arial', sans-serif; font-size:1em; margin-bottom:2.5em; color:#eee; letter-spacing:0.08em; font-weight:500;">
-											<li>Revamping the new LSCA website, coming October 2025</li>
-										</ul>
-										<span style="display:block; text-align:right; font-size:0.9em; color:#888; opacity:0.7; letter-spacing:0.08em; margin-top:1em;">May 2025 - Present</span>
-									</div>
-									<div class="experience-card" style="padding:2em; font-size:1.1em; position:relative; background:rgba(255,255,255,0.02); border-radius:16px; margin-bottom:2em; box-shadow:0 2px 8px rgba(0,0,0,0.05); max-width:98%; margin-left:auto; margin-right:auto; min-height:200px;">
-										<div style="display:flex; align-items:center; gap:2em; margin-bottom:1em;">
-											<img src="images/LCSLogo.jpg" alt="Company Logo" style="height:96px; width:96px; object-fit:cover; border-radius:50%; background:#181a1b; display:block;" />
-											<span style="font-size:1.1em; font-weight:600; font-family: 'Montserrat', 'Arial', sans-serif; letter-spacing:0.08em; color:#bbb;">Laurier Computing Society</span>
-										</div>
-										<h3 style="font-size:1em; font-weight:700; color:#bbb; letter-spacing:0.05em; text-transform:uppercase; font-family: 'Montserrat', 'Arial', sans-serif; margin-bottom:0.7em;">Technical Content Writer</h3>
-										<ul style="font-family: 'Montserrat', 'Arial', sans-serif; font-size:1em; margin-bottom:2.5em; color:#eee; letter-spacing:0.08em; font-weight:500;">
-											<li>Led comprehensive exam review sessions for 150+ students across multiple computer science courses (CP220, CP213, CP264, CP363, CP216), covering data structures, algorithms, and programming fundamentals</li>
-											<li>Designed and delivered technical presentation materials with live coding demonstrations, breaking down complex programming concepts for enhanced student comprehension</li>
-											<li>Facilitated interactive coding workshops demonstrating real-time problem-solving techniques and best practices in software development</li>
-										</ul>
-										<span style="display:block; text-align:right; font-size:0.9em; color:#888; opacity:0.7; letter-spacing:0.08em; margin-top:1em;">January 2025 - Present</span>
-									</div>
-									<div class="experience-card" style="padding:2em; font-size:1.1em; position:relative; background:rgba(255,255,255,0.02); border-radius:16px; margin-bottom:2em; box-shadow:0 2px 8px rgba(0,0,0,0.05); max-width:98%; margin-left:auto; margin-right:auto; min-height:200px;">
-										<div style="display:flex; align-items:center; gap:2em; margin-bottom:1em;">
-											<img src="images/AppleLogo.jpg" alt="Company Logo" style="height:96px; width:96px; object-fit:cover; border-radius:50%; background:#181a1b; display:block;" />
-											<span style="font-size:1.1em; font-weight:600; font-family: 'Montserrat', 'Arial', sans-serif; letter-spacing:0.08em; color:#bbb;">Apple Canada</span>
-										</div>
-										<h3 style="font-size:1em; font-weight:700; color:#bbb; letter-spacing:0.05em; text-transform:uppercase; font-family: 'Montserrat', 'Arial', sans-serif; margin-bottom:0.7em;">Application Developer Co-op</h3>
-										<ul style="font-family: 'Montserrat', 'Arial', sans-serif; font-size:1em; margin-bottom:2.5em; color:#eee; letter-spacing:0.08em; font-weight:500;">
-											<li>Completed intensive mobile development co-op obtained through Halton Industry Education Council (HIEC) as part of my ICT SHSM certification, gaining hands-on experience in iOS development and industry best practices</li>
-											<li>Developed LiftEats, a comprehensive fitness tracking mobile application using Swift and Xcode, featuring real-time Apple Watch integration for activity monitoring with 95% data accuracy</li>
-											<li>Presented LiftEats to Apple Canada executives and 500+ industry professionals in a high-stakes 8-minute pitch session, earning recognition from judges and securing mentorship opportunities</li>
-										</ul>
-										<span style="display:block; text-align:right; font-size:0.9em; color:#888888; opacity:0.7; letter-spacing:0.08em; margin-top:1em;">December 2021 - February 2022</span>
-									</div>
-								</div>
-							</article>
+                <!-- FitQuest Project -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image">
+                        <img src="images/FitQuestProject.png" alt="FitQuest" />
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://algorithmathletes-production.up.railway.app/login" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/AhmadYahya-05/AlgorithmAthletes" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">FitQuest</h3>
+                        <p class="project-description">Full Stack Gen AI Web Application built with MERN @ Spurhacks 2025</p>
+                        <div class="project-badge">
+                            <span class="badge">2nd Place Hack Track - $2500 (190+ teams)</span>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Express.js</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Gemini</span>
+                        </div>
+                        <span class="project-date">June 20th Weekend, 2025</span>
+                    </div>
+                </div>
 
-						<!-- Contact -->
-							<article id="contact">
-								<h2 class="major" style="text-align:center;">Contact</h2>
-								<form method="post" action="#" style="max-width: 400px; margin: 0 auto 2em auto;">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="email" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4"></textarea>
-										</div>
-									</div>
-									<ul class="actions" style="justify-content:center; display:flex; gap:1em;">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-								<div style="text-align:center; margin-top:2em;">
-									<a href="https://github.com/emaadqazi" target="_blank" style="margin-right: 15px;">
-										<span class="icon brands fa-github" style="font-size:2em; vertical-align: middle;"></span>
-									</a>
-									<a href="https://www.linkedin.com/in/emaadqazi" target="_blank" style="margin-right: 15px;">
-										<span class="icon brands fa-linkedin" style="font-size:2em; vertical-align: middle;"></span>
-									</a>
-									<a href="https://devpost.com/qaziemaad?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav" target="_blank">
-										<img src="images/DevpostIMG.jpg" alt="Devpost" style="height:2em; vertical-align: middle; border-radius:5px; filter: grayscale(100%); margin-left: 0px; margin-right: 0px;" />
-									</a>
-								</div>
-							</article>
+                <!-- Notes App Project -->
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image">
+                        <img src="images/MernNotesProject.png" alt="Notes App" />
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://notesmernstack.onrender.com/" target="_blank" class="project-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                                <a href="https://github.com/emaadqazi/NotesMERNStack" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Notes App</h3>
+                        <p class="project-description">Notes App built with MERN & deployed on Render</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Express.js</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Javascript</span>
+                        </div>
+                        <span class="project-date">June 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-						<!-- Elements -->
-							<article id="elements">
-								<h2 class="major">Elements</h2>
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skills-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="category-title">Frontend</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-bootstrap"></i>
+                            <span>Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
 
-								<section>
-									<h3 class="major">Text</h3>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<h6>Heading Level 6</h6>
-									<hr />
-									<h4>Blockquote</h4>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h4>Preformatted</h4>
-									<pre><code>i = 0;
+                <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="category-title">Backend</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-database"></i>
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-server"></i>
+                            <span>Express.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-flask"></i>
+                            <span>Flask</span>
+                        </div>
+                    </div>
+                </div>
 
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
+                <div class="skills-category" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="category-title">Tools & Platforms</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fab fa-git-alt"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-cloud"></i>
+                            <span>Railway</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code"></i>
+                            <span>VBA</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Power Query</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-								</section>
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Experience</h2>
+            <div class="timeline">
+                <!-- Samsung Experience -->
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <img src="images/SamsungLogo.png" alt="Samsung" class="company-logo" />
+                            <div class="experience-info">
+                                <h3 class="company-name">Samsung Electronics Canada</h3>
+                                <h4 class="job-title">SCM Operations Co-op - CE Division</h4>
+                                <span class="job-date">May 2025 - Present</span>
+                            </div>
+                        </div>
+                        <ul class="job-description">
+                            <li>Managed daily data pipeline operations through SQL table refreshes and Power Query automation, providing essential reporting to 200+ stakeholders across a $350M+ monthly business division</li>
+                            <li>Developed and implemented VBA automation script for cross-shipping operations between East/West warehouses, reducing manual processing time by 200+ hours monthly in HE division</li>
+                            <li>Built automated KPI dashboard using VBA and Power Query for DA Sales KAM team, improving forecast accuracy by 27% through real-time data integration</li>
+                        </ul>
+                    </div>
+                </div>
 
-								<section>
-									<h3 class="major">Lists</h3>
+                <!-- LSCA Experience -->
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <img src="images/LSCALogo.jpg" alt="LSCA" class="company-logo" />
+                            <div class="experience-info">
+                                <h3 class="company-name">Laurier Supply Chain Association</h3>
+                                <h4 class="job-title">VP of Software Development</h4>
+                                <span class="job-date">May 2025 - Present</span>
+                            </div>
+                        </div>
+                        <ul class="job-description">
+                            <li>Revamping the new LSCA website, coming October 2025</li>
+                        </ul>
+                    </div>
+                </div>
 
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
+                <!-- LCS Experience -->
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <img src="images/LCSLogo.jpg" alt="LCS" class="company-logo" />
+                            <div class="experience-info">
+                                <h3 class="company-name">Laurier Computing Society</h3>
+                                <h4 class="job-title">Technical Content Writer</h4>
+                                <span class="job-date">January 2025 - Present</span>
+                            </div>
+                        </div>
+                        <ul class="job-description">
+                            <li>Led comprehensive exam review sessions for 150+ students across multiple computer science courses (CP220, CP213, CP264, CP363, CP216), covering data structures, algorithms, and programming fundamentals</li>
+                            <li>Designed and delivered technical presentation materials with live coding demonstrations, breaking down complex programming concepts for enhanced student comprehension</li>
+                            <li>Facilitated interactive coding workshops demonstrating real-time problem-solving techniques and best practices in software development</li>
+                        </ul>
+                    </div>
+                </div>
 
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
+                <!-- Apple Experience -->
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="experience-header">
+                            <img src="images/AppleLogo.jpg" alt="Apple" class="company-logo" />
+                            <div class="experience-info">
+                                <h3 class="company-name">Apple Canada</h3>
+                                <h4 class="job-title">Application Developer Co-op</h4>
+                                <span class="job-date">December 2021 - February 2022</span>
+                            </div>
+                        </div>
+                        <ul class="job-description">
+                            <li>Completed intensive mobile development co-op obtained through Halton Industry Education Council (HIEC) as part of my ICT SHSM certification, gaining hands-on experience in iOS development and industry best practices</li>
+                            <li>Developed LiftEats, a comprehensive fitness tracking mobile application using Swift and Xcode, featuring real-time Apple Watch integration for activity monitoring with 95% data accuracy</li>
+                            <li>Presented LiftEats to Apple Canada executives and 500+ industry professionals in a high-stakes 8-minute pitch session, earning recognition from judges and securing mentorship opportunities</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									</ul>
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Let's Connect</h3>
+                    <p>I'm always interested in new opportunities and collaborations. Feel free to reach out!</p>
+                    <div class="contact-links">
+                        <a href="mailto:qaziemaad@gmail.com" class="contact-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>qaziemaad@gmail.com</span>
+                        </a>
+                        <a href="https://github.com/emaadqazi" target="_blank" class="contact-link">
+                            <i class="fab fa-github"></i>
+                            <span>github.com/emaadqazi</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/emaadqazi" target="_blank" class="contact-link">
+                            <i class="fab fa-linkedin"></i>
+                            <span>linkedin.com/in/emaadqazi</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form" data-aos="fade-left">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required />
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required />
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Emaad Qazi. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/emaadqazi" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/emaadqazi" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:qaziemaad@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-								<section>
-									<h3 class="major">Table</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</section>
-
-								<section>
-									<h3 class="major">Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Form</h3>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-											</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
-
-							</article>
-
-					</div>
-
-			</div>
-
-		<!-- BG -->
-			<div id="bg"></div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/modern.js"></script>
+</body>
 </html>

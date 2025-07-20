@@ -4,6 +4,19 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+// Modern compatibility layer
+(function() {
+    // Check if we're using the modern layout
+    const isModernLayout = document.querySelector('.navbar') !== null;
+    
+    if (isModernLayout) {
+        // Modern layout detected - skip old functionality
+        return;
+    }
+    
+    // Legacy layout - continue with original functionality
+})();
+
 (function($) {
 
 	var	$window = $(window),
@@ -202,18 +215,13 @@
 				var $article = $main_articles.filter('.active');
 
 				// Article not visible? Bail.
-					if (!$body.hasClass('is-article-visible'))
+					if ($article.length == 0)
 						return;
-
-				// Add state?
-					if (typeof addState != 'undefined'
-					&&	addState === true)
-						history.pushState(null, null, '#');
 
 				// Handle lock.
 
 					// Already locked? Speed through "hide" steps w/o delays.
-						if (locked) {
+						if (locked || (typeof initial != 'undefined' && initial === false)) {
 
 							// Mark as switching.
 								$body.addClass('is-switching');
@@ -236,12 +244,9 @@
 								locked = false;
 
 							// Unmark as switching.
-								$body.removeClass('is-switching');
-
-							// Window stuff.
-								$window
-									.scrollTop(0)
-									.triggerHandler('resize.flexbox-fix');
+								setTimeout(function() {
+									$body.removeClass('is-switching');
+								}, (initial ? 1000 : 0));
 
 							return;
 
@@ -283,20 +288,17 @@
 
 					}, delay);
 
-
 			};
 
 		// Articles.
 			$main_articles.each(function() {
 
-				var $this = $(this);
+				var	$this = $(this);
 
-				// Close.
-					$('<div class="close">Close</div>')
-						.appendTo($this)
-						.on('click', function() {
-							location.hash = '';
-						});
+				// Close article.
+					$this.find('.close').on('click', function() {
+						$main._hide();
+					});
 
 				// Prevent clicks from inside article from bubbling.
 					$this.on('click', function(event) {
@@ -310,7 +312,7 @@
 
 				// Article visible? Hide.
 					if ($body.hasClass('is-article-visible'))
-						$main._hide(true);
+						$main._hide();
 
 			});
 
@@ -318,11 +320,11 @@
 
 				switch (event.keyCode) {
 
-					case 27:
+					case 27: // ESC
 
 						// Article visible? Hide.
 							if ($body.hasClass('is-article-visible'))
-								$main._hide(true);
+								$main._hide();
 
 						break;
 
@@ -333,69 +335,11 @@
 
 			});
 
-			$window.on('hashchange', function(event) {
-
-				// Empty hash?
-					if (location.hash == ''
-					||	location.hash == '#') {
-
-						// Prevent default.
-							event.preventDefault();
-							event.stopPropagation();
-
-						// Hide.
-							$main._hide();
-
-					}
-
-				// Otherwise, check for a matching article.
-					else if ($main_articles.filter(location.hash).length > 0) {
-
-						// Prevent default.
-							event.preventDefault();
-							event.stopPropagation();
-
-						// Show article.
-							$main._show(location.hash.substr(1));
-
-					}
-
-			});
-
-		// Scroll restoration.
-		// This prevents the page from scrolling back to the top on a hashchange.
-			if ('scrollRestoration' in history)
-				history.scrollRestoration = 'manual';
-			else {
-
-				var	oldScrollPos = 0,
-					scrollPos = 0,
-					$htmlbody = $('html,body');
-
-				$window
-					.on('scroll', function() {
-
-						oldScrollPos = scrollPos;
-						scrollPos = $htmlbody.scrollTop();
-
-					})
-					.on('hashchange', function() {
-						$window.scrollTop(oldScrollPos);
-					});
-
-			}
-
-		// Initialize.
-
-			// Hide main, articles.
-				$main.hide();
-				$main_articles.hide();
-
-			// Initial article.
-				if (location.hash != ''
-				&&	location.hash != '#')
-					$window.on('load', function() {
-						$main._show(location.hash.substr(1), true);
-					});
+		// Initial article.
+			if (location.hash != ''
+			&&	location.hash != '#1')
+				$window.on('load', function() {
+					$main._show(location.hash.substr(1));
+				});
 
 })(jQuery);
