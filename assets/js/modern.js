@@ -236,12 +236,12 @@ function initTypingAnimation() {
             if (i < text.length) {
                 nameElement.textContent += text.charAt(i);
                 i++;
-                setTimeout(typeWriter, 100);
+                setTimeout(typeWriter, 150);
             }
         };
         
-        // Start typing animation after a delay
-        setTimeout(typeWriter, 1000);
+        // Start typing animation after a longer delay
+        setTimeout(typeWriter, 2000);
     }
 }
 
