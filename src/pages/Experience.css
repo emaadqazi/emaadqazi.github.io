@@ -1,0 +1,257 @@
+.experience-page {
+  min-height: 100vh;
+  padding: 120px 0 80px;
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.02) 0%, transparent 50%);
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--accent-green), var(--light-green));
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+  padding-left: 100px;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 42px;
+  top: 20px;
+  width: 16px;
+  height: 16px;
+  background: var(--accent-green);
+  border: 3px solid var(--primary-black);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+  z-index: 2;
+}
+
+.timeline-content {
+  background: var(--secondary-black);
+  border: 1px solid var(--border-green);
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  left: -15px;
+  top: 30px;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid var(--secondary-black);
+}
+
+.timeline-content:hover {
+  transform: translateX(10px);
+  box-shadow: 0 25px 50px rgba(0, 255, 136, 0.2);
+  border-color: var(--accent-green);
+}
+
+.experience-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.company-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent-green);
+  background: var(--primary-black);
+  padding: 5px;
+}
+
+.experience-info {
+  flex: 1;
+}
+
+.company-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--accent-green);
+  margin-bottom: 0.3rem;
+}
+
+.job-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-white);
+  margin-bottom: 0.3rem;
+}
+
+.job-date {
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  font-weight: 500;
+}
+
+.job-description {
+  list-style: none;
+  padding: 0;
+}
+
+.job-description li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: var(--text-gray);
+}
+
+.job-description li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: var(--accent-green);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.job-description li:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .experience-page {
+    padding: 100px 0 60px;
+  }
+  
+  .timeline {
+    padding: 0 1rem;
+  }
+  
+  .timeline::before {
+    left: 30px;
+  }
+  
+  .timeline-item {
+    padding-left: 70px;
+  }
+  
+  .timeline-marker {
+    left: 22px;
+  }
+  
+  .timeline-content {
+    padding: 1.5rem;
+  }
+  
+  .timeline-content::before {
+    left: -12px;
+    border-right-width: 12px;
+    border-top-width: 12px;
+    border-bottom-width: 12px;
+  }
+  
+  .experience-header {
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .company-logo {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .company-name {
+    font-size: 1.2rem;
+  }
+  
+  .job-title {
+    font-size: 1rem;
+  }
+  
+  .job-description li {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-page {
+    padding: 80px 0 40px;
+  }
+  
+  .timeline {
+    padding: 0 0.5rem;
+  }
+  
+  .timeline::before {
+    left: 25px;
+  }
+  
+  .timeline-item {
+    padding-left: 60px;
+    margin-bottom: 2rem;
+  }
+  
+  .timeline-marker {
+    left: 17px;
+    width: 14px;
+    height: 14px;
+  }
+  
+  .timeline-content {
+    padding: 1.2rem;
+  }
+  
+  .timeline-content::before {
+    left: -10px;
+    border-right-width: 10px;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+  }
+  
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+  
+  .company-logo {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .company-name {
+    font-size: 1.1rem;
+  }
+  
+  .job-title {
+    font-size: 0.95rem;
+  }
+  
+  .job-date {
+    font-size: 0.85rem;
+  }
+  
+  .job-description li {
+    font-size: 0.9rem;
+    padding-left: 1.2rem;
+  }
+}

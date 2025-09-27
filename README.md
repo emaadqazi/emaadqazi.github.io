@@ -1,158 +1,182 @@
-# Emaad Qazi - Modern Portfolio Website
+# Emaad Qazi - Portfolio Website
 
-A modern, responsive portfolio website built with HTML5, CSS3, and vanilla JavaScript. Features a clean, minimalist design with smooth animations and professional styling.
+A modern, responsive React portfolio website featuring infinite scrolling, smooth animations, and a sleek black and green theme.
 
-## 🚀 Features
+## Features
 
-### Design & Layout
-- **Modern, Clean Design**: Minimalist aesthetic with professional styling
-- **Fully Responsive**: Optimized for desktop, tablet, and mobile devices
-- **Dark/Light Mode Toggle**: Switch between themes with persistent preference
-- **Smooth Animations**: Scroll-triggered animations and hover effects
-- **Professional Typography**: Using Inter font family for modern readability
+- 🚀 **React 18** with modern hooks and functional components
+- 🎨 **Black & Green Theme** with gradient accents and neon highlights
+- 📱 **Fully Responsive** design that works on all devices
+- ✨ **Smooth Animations** powered by Framer Motion
+- 🔗 **React Router** for seamless navigation
+- 📄 **Infinite Scrolling** single-page experience
+- 🎯 **Direct Navigation** to specific sections via URL routing
+- 💫 **Interactive Elements** with hover effects and transitions
 
-### Navigation & UX
-- **Sticky Navigation**: Fixed header with smooth scroll behavior
-- **Mobile-First Navigation**: Hamburger menu for mobile devices
-- **Active Section Highlighting**: Navigation links highlight current section
-- **Smooth Scrolling**: Seamless navigation between sections
+## Tech Stack
 
-### Sections
-1. **Hero Section**: Full-screen introduction with call-to-action buttons
-2. **About Section**: Personal bio with professional photo
-3. **Projects Section**: Showcase of featured projects with tech stack
-4. **Skills Section**: Interactive skills display with icons
-5. **Experience Section**: Timeline-based work experience
-6. **Contact Section**: Contact form with social media links
+- **Frontend**: React 18, React Router DOM
+- **Styling**: CSS3 with CSS Grid and Flexbox
+- **Animations**: Framer Motion
+- **Icons**: React Icons (Font Awesome)
+- **Build Tool**: Create React App
 
-### Interactive Features
-- **Project Cards**: Hover effects with live links and GitHub repositories
-- **Skills Animation**: Staggered animation for skills display
-- **Contact Form**: Form validation with success/error notifications
-- **Social Media Integration**: Direct links to GitHub, LinkedIn, and more
-
-## 🛠️ Technical Stack
-
-- **HTML5**: Semantic markup with modern structure
-- **CSS3**: Custom properties, Flexbox, Grid, and animations
-- **Vanilla JavaScript**: No dependencies, modern ES6+ features
-- **Font Awesome**: Icons for skills and social media
-- **Google Fonts**: Inter font family
-
-## 📁 File Structure
+## Project Structure
 
 ```
-emaadqazi.github.io/
-├── index.html              # Main HTML file
-├── assets/
-│   ├── css/
-│   │   ├── main.css        # Original styles (legacy support)
-│   │   └── modern.css      # New modern styles
-│   └── js/
-│       ├── main.js         # Original functionality (legacy)
-│       └── modern.js       # New modern functionality
-├── images/                 # Project images and assets
-└── README.md              # This file
+src/
+├── components/
+│   ├── Navbar.js          # Navigation component
+│   └── Navbar.css
+├── pages/
+│   ├── Home.js            # Hero section
+│   ├── About.js           # About section
+│   ├── Projects.js        # Projects showcase
+│   ├── Skills.js          # Skills & technologies
+│   ├── Experience.js      # Work experience timeline
+│   ├── Resume.js          # Resume viewer/download
+│   ├── Contact.js         # Contact form & info
+│   └── *.css              # Individual page styles
+├── App.js                 # Main app component
+├── App.css               # Global styles
+├── index.js              # React entry point
+└── index.css             # Base styles
 ```
 
-## 🎨 Design Features
+## Getting Started
 
-### Color Scheme
-- **Primary**: `#64ffda` (Cyan accent)
-- **Background**: `#0a192f` (Dark navy)
-- **Text**: `#ccd6f6` (Light blue-gray)
-- **Secondary**: `#8892b0` (Muted blue)
+### Prerequisites
 
-### Typography
-- **Primary Font**: Inter (Google Fonts)
-- **Weights**: 300, 400, 500, 600, 700
-- **Responsive**: Scales appropriately across devices
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone <your-repo-url>
+   cd emaadqazi-portfolio
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Copy your existing images**
+   ```bash
+   # Copy your images from the original project to public/images/
+   cp -r /path/to/original/images public/images/
+   ```
+
+4. **Start the development server**
+   ```bash
+   npm start
+   ```
+
+5. **Open your browser**
+   Navigate to `http://localhost:3000`
+
+## Deployment
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+### Deploy to GitHub Pages
+
+1. Install gh-pages package:
+   ```bash
+   npm install --save-dev gh-pages
+   ```
+
+2. Add deployment scripts to package.json:
+   ```json
+   "scripts": {
+     "predeploy": "npm run build",
+     "deploy": "gh-pages -d build"
+   }
+   ```
+
+3. Deploy:
+   ```bash
+   npm run deploy
+   ```
+
+## Customization
+
+### Colors
+The color scheme is defined in `src/index.css` using CSS custom properties:
+
+```css
+:root {
+  --primary-black: #000000;
+  --secondary-black: #111111;
+  --accent-green: #00ff88;
+  --light-green: #00cc6a;
+  --dark-green: #00aa55;
+  --text-white: #ffffff;
+  --text-gray: #cccccc;
+  --border-green: rgba(0, 255, 136, 0.3);
+}
+```
+
+### Content
+- Update personal information in each page component
+- Modify project data in `src/pages/Projects.js`
+- Update experience details in `src/pages/Experience.js`
+- Change contact information in `src/pages/Contact.js`
+
+### Images
+- Place your images in the `public/images/` folder
+- Update image paths in the respective components
+
+## Features Breakdown
+
+### Navigation
+- Fixed header with smooth scrolling
+- Mobile-responsive hamburger menu
+- Active page highlighting
+- Smooth page transitions
+
+### Pages
+- **Home**: Hero section with animated profile image
+- **About**: Personal introduction with rotating border animation
+- **Projects**: Project cards with hover effects and tech tags
+- **Skills**: Categorized skills with icons and animations
+- **Experience**: Timeline layout with company logos
+- **Resume**: PDF viewer with download functionality
+- **Contact**: Contact form with social links
 
 ### Animations
-- **Scroll Animations**: Elements animate on scroll into view
-- **Hover Effects**: Subtle transformations on interactive elements
-- **Loading Animations**: Smooth page load transitions
-- **Typing Effect**: Hero section name animation
+- Framer Motion for page transitions
+- CSS animations for hover effects
+- Staggered animations for lists
+- Smooth scrolling between sections
 
-## 📱 Responsive Breakpoints
+## Browser Support
 
-- **Desktop**: 1200px+
-- **Tablet**: 768px - 1199px
-- **Mobile**: 320px - 767px
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
-## 🔧 Customization
+## Contributing
 
-### Adding New Projects
-1. Copy the project card structure in the HTML
-2. Update the image, title, description, and tech stack
-3. Add live and GitHub links
-4. Update the date
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-### Modifying Skills
-1. Find the skills section in the HTML
-2. Add new skill items with appropriate Font Awesome icons
-3. Update the CSS if needed for new categories
+## License
 
-### Changing Colors
-1. Edit the CSS custom properties in `modern.css`
-2. Update the `:root` variables for theme colors
-3. Add new color schemes as needed
+This project is open source and available under the [MIT License](LICENSE).
 
-## 🚀 Performance Optimizations
+## Contact
 
-- **Lazy Loading**: Images load as needed
-- **Debounced Scroll Events**: Optimized scroll performance
-- **CSS Animations**: Hardware-accelerated animations
-- **Minimal Dependencies**: No heavy frameworks
+Emaad Qazi - emaadqazi.dev@gmail.com
 
-## 🌐 Browser Support
-
-- **Modern Browsers**: Chrome, Firefox, Safari, Edge
-- **Mobile Browsers**: iOS Safari, Chrome Mobile
-- **Fallbacks**: Graceful degradation for older browsers
-
-## 📝 Usage
-
-1. **Clone/Download**: Get the project files
-2. **Customize Content**: Update personal information, projects, and skills
-3. **Deploy**: Upload to GitHub Pages or any web hosting service
-4. **Update**: Modify content as needed
-
-## 🎯 Key Features Explained
-
-### Dark/Light Mode
-- Toggle button in the navigation
-- Persistent preference using localStorage
-- Smooth transition between themes
-
-### Project Showcase
-- Hover effects reveal project links
-- Tech stack tags for each project
-- Responsive grid layout
-- Achievement badges for hackathon wins
-
-### Skills Display
-- Categorized by Frontend, Backend, Tools
-- Animated entrance effects
-- Icon-based visual representation
-- Hover interactions
-
-### Contact Form
-- Client-side validation
-- Success/error notifications
-- Social media integration
-- Professional styling
-
-## 🔄 Future Enhancements
-
-- [ ] Blog section
-- [ ] Project filtering by category
-- [ ] More animation options
-- [ ] Portfolio analytics
-- [ ] Multi-language support
-- [ ] Advanced form handling
-
-## 📄 License
-
-This project is based on the Dimension template by HTML5 UP, modified for modern portfolio use.
-
+Project Link: [https://github.com/emaadqazi/emaadqazi.github.io](https://github.com/emaadqazi/emaadqazi.github.io)
