@@ -76,7 +76,7 @@ const Home = () => {
             >
               <div className="image-container">
                 <img 
-                  src="/images/LinkedInPicture.jpg" 
+                  src="images/LinkedInPicture.jpg" 
                   alt="Emaad Qazi" 
                   className="profile-image"
                 />

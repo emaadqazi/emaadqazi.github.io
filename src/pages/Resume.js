@@ -56,7 +56,7 @@ const Resume = () => {
             <p>Get a detailed view of my experience, skills, and qualifications in PDF format.</p>
             <div className="resume-actions">
               <a 
-                href="/assets/resume/Resume - newest SWE.pdf" 
+                href="assets/resume/Resume - newest SWE.pdf" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="btn btn-primary"
@@ -65,7 +65,7 @@ const Resume = () => {
                 View Resume
               </a>
               <a 
-                href="/assets/resume/Resume - newest SWE.pdf" 
+                href="assets/resume/Resume - newest SWE.pdf" 
                 download
                 className="btn btn-secondary"
               >
@@ -81,7 +81,7 @@ const Resume = () => {
           >
             <div className="pdf-container">
               <iframe 
-                src="/assets/resume/Resume - newest SWE.pdf#toolbar=0" 
+                src="assets/resume/Resume - newest SWE.pdf#toolbar=0" 
                 width="100%" 
                 height="600" 
                 frameBorder="0"

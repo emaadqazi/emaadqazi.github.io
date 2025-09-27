@@ -53,7 +53,7 @@ const About = () => {
           >
             <div className="image-container">
               <img 
-                src="/images/GithubPFP.png" 
+                src="images/GithubPFP.png" 
                 alt="Emaad Qazi" 
                 className="about-img"
               />

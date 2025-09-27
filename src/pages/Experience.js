@@ -13,7 +13,7 @@ const Experience = () => {
       company: "Samsung Electronics Canada",
       position: "SCM Operations Co-op - CE Division",
       duration: "May 2025 - Present",
-      logo: "/images/SamsungLogo.png",
+      logo: "images/SamsungLogo.png",
       achievements: [
         "Managed daily data pipeline operations through SQL table refreshes and Power Query automation, providing essential reporting to 200+ stakeholders across a $350M+ monthly business division",
         "Developed and implemented VBA automation script for cross-shipping operations between East/West warehouses, reducing manual processing time by 200+ hours monthly in HE division",
@@ -25,7 +25,7 @@ const Experience = () => {
       company: "Laurier Supply Chain Association",
       position: "VP of Software Development",
       duration: "May 2025 - Present",
-      logo: "/images/LSCALogo.jpg",
+      logo: "images/LSCALogo.jpg",
       achievements: [
         "Revamping the new LSCA website, coming October 2025"
       ]
@@ -35,7 +35,7 @@ const Experience = () => {
       company: "Laurier Computing Society",
       position: "Academics, Content Writer",
       duration: "January 2025 - Present",
-      logo: "/images/LCSLogo.jpg",
+      logo: "images/LCSLogo.jpg",
       achievements: [
         "Led comprehensive exam review sessions for 150+ students across multiple computer science courses (CP220, CP213, CP264, CP363, CP216), covering data structures, algorithms, and programming fundamentals",
         "Designed and delivered technical presentation materials with live coding demonstrations, breaking down complex programming concepts for enhanced student comprehension",
@@ -47,7 +47,7 @@ const Experience = () => {
       company: "Apple Canada",
       position: "Application Developer Co-op",
       duration: "December 2021 - February 2022",
-      logo: "/images/AppleLogo.jpg",
+      logo: "images/AppleLogo.jpg",
       achievements: [
         "Completed intensive mobile development co-op obtained through Halton Industry Education Council (HIEC) as part of my ICT SHSM certification, gaining hands-on experience in iOS development and industry best practices",
         "Developed LiftEats, a comprehensive fitness tracking mobile application using Swift and Xcode, featuring real-time Apple Watch integration for activity monitoring with 95% data accuracy",
