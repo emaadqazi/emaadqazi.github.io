@@ -12,8 +12,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #000000;
   color: #ffffff;
-  line-height: 1.6;
+  line-height: 1.7;
   scroll-behavior: smooth;
+  font-weight: 400;
+  letter-spacing: 0.3px;
 }
 
 code {
@@ -25,12 +27,12 @@ code {
 :root {
   --primary-black: #000000;
   --secondary-black: #111111;
-  --accent-green: #00ff88;
-  --light-green: #00cc6a;
-  --dark-green: #00aa55;
+  --accent-grey: #808080;
+  --light-grey: #a0a0a0;
+  --dark-grey: #606060;
   --text-white: #ffffff;
   --text-gray: #cccccc;
-  --border-green: rgba(0, 255, 136, 0.3);
+  --border-grey: rgba(128, 128, 128, 0.3);
 }
 
 /* Smooth scrolling for all anchor links */
@@ -48,10 +50,10 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--accent-green);
+  background: var(--accent-grey);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--light-green);
+  background: var(--light-grey);
 }
