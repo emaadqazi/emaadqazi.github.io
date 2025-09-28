@@ -73,7 +73,7 @@ const Navbar = () => {
               transition={{ duration: 0.2 }}
             >
               <span className="logo-first">EMAAD</span>
-              <span className="logo-last">QAZI</span>
+              <span className="logo-last"> QAZI</span>
             </motion.span>
           </button>
           

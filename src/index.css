@@ -16,6 +16,110 @@ body {
   scroll-behavior: smooth;
   font-weight: 400;
   letter-spacing: 0.3px;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Main shimmer effect */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(128, 128, 128, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 80% 20%, rgba(128, 128, 128, 0.06) 0%, transparent 60%),
+    radial-gradient(circle at 40% 40%, rgba(128, 128, 128, 0.04) 0%, transparent 60%),
+    radial-gradient(circle at 60% 70%, rgba(128, 128, 128, 0.05) 0%, transparent 60%);
+  animation: shimmer 10s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translateX(-15px) translateY(-10px) scale(1);
+  }
+  25% {
+    opacity: 0.7;
+    transform: translateX(15px) translateY(10px) scale(1.05);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(-10px) translateY(15px) scale(0.95);
+  }
+  75% {
+    opacity: 0.8;
+    transform: translateX(10px) translateY(-15px) scale(1.02);
+  }
+}
+
+/* Secondary shimmer sweep effect */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(
+      45deg,
+      transparent 25%,
+      rgba(128, 128, 128, 0.04) 50%,
+      transparent 75%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 25%,
+      rgba(128, 128, 128, 0.03) 50%,
+      transparent 75%
+    );
+  animation: shimmer2 15s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes shimmer2 {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(360deg);
+  }
+}
+
+/* Floating particles effect - using a wrapper div instead of body::before */
+.shimmer-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, rgba(128, 128, 128, 0.3), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(128, 128, 128, 0.2), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(128, 128, 128, 0.4), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(128, 128, 128, 0.3), transparent),
+    radial-gradient(2px 2px at 160px 30px, rgba(128, 128, 128, 0.2), transparent),
+    radial-gradient(1px 1px at 180px 50px, rgba(128, 128, 128, 0.25), transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: sparkle 25s linear infinite;
+  pointer-events: none;
+  z-index: -2;
+}
+
+@keyframes sparkle {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-100px);
+  }
 }
 
 code {

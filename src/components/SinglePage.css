@@ -753,32 +753,38 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  align-items: center;
+  align-items: stretch;
   max-width: 1200px;
   margin: 0 auto;
+  min-height: 500px;
 }
 
 .resume-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 2rem;
 }
 
 .resume-info h3 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 600;
-  color: var(--accent-grey);
-  margin-bottom: 1rem;
+  color: var(--text-white);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
 }
 
 .resume-info p {
   font-size: 1.1rem;
   color: var(--text-gray);
   line-height: 1.6;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
 }
 
 .resume-actions {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.2rem;
   flex-wrap: wrap;
 }
 
@@ -810,15 +816,194 @@
 .pdf-container {
   position: relative;
   z-index: 2;
-  background: white;
+  background: var(--secondary-black);
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-grey);
+  padding: 0;
 }
 
-.pdf-container iframe {
-  border-radius: 15px;
-  display: block;
+.resume-preview-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 500px;
+}
+
+.resume-preview-header {
+  padding: 2rem 2rem 1rem 2rem;
+  text-align: center;
+}
+
+.resume-preview-title h4 {
+  color: var(--text-white);
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.resume-preview-subtitle {
+  color: var(--accent-grey);
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.resume-preview-body {
+  flex: 1;
+  padding: 0 2rem 2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resume-thumbnail {
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.resume-page {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transform: perspective(1000px) rotateY(-3deg) rotateX(2deg);
+  transition: all 0.4s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.resume-page:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.03);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+}
+
+.resume-header-preview {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e8e8e8;
+}
+
+.resume-name-preview {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.5px;
+}
+
+.resume-title-preview {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.resume-contact-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: #95a5a6;
+  font-weight: 400;
+}
+
+.resume-content-preview {
+  font-size: 0.85rem;
+  color: #34495e;
+  line-height: 1.5;
+}
+
+.resume-section {
+  margin-bottom: 1.2rem;
+}
+
+.resume-section h5 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 0.4rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border-bottom: 1px solid #ecf0f1;
+  padding-bottom: 0.3rem;
+}
+
+.resume-section p {
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.resume-preview-footer {
+  padding: 1.5rem 2rem 2rem 2rem;
+  text-align: center;
+}
+
+.pdf-view-btn {
+  background: linear-gradient(135deg, var(--accent-grey), var(--light-grey));
+  color: var(--primary-black);
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pdf-view-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(128, 128, 128, 0.3);
+}
+
+/* Mobile Responsive for Resume Section */
+@media (max-width: 768px) {
+  .resume-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    min-height: auto;
+  }
+  
+  .resume-info {
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .resume-info h3 {
+    font-size: 1.8rem;
+  }
+  
+  .resume-actions {
+    justify-content: center;
+  }
+  
+  .resume-preview-content {
+    min-height: 400px;
+  }
+  
+  .resume-preview-header,
+  .resume-preview-body,
+  .resume-preview-footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .resume-page {
+    padding: 1.5rem;
+    transform: perspective(1000px) rotateY(-1deg);
+  }
+  
+  .resume-name-preview {
+    font-size: 1.4rem;
+  }
+  
+  .resume-title-preview {
+    font-size: 1rem;
+  }
 }
 
 /* Contact Section */
