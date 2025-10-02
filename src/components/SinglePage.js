@@ -558,7 +558,7 @@ const SinglePage = () => {
               <p>Get a detailed view of my experience, skills, and qualifications in PDF format.</p>
               <div className="resume-actions">
                 <a 
-                  href="assets/resume/Resume - Software Engineering, Emaad.pdf" 
+                  href="/resume/Resume - Software Engineering, Emaad.pdf" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="btn btn-primary"
@@ -567,7 +567,7 @@ const SinglePage = () => {
                   View Resume
                 </a>
                 <a 
-                  href="assets/resume/Resume - Software Engineering, Emaad.pdf" 
+                  href="/resume/Resume - Software Engineering, Emaad.pdf" 
                   download
                   className="btn btn-secondary"
                 >
@@ -582,46 +582,15 @@ const SinglePage = () => {
               variants={itemVariants}
             >
               <div className="pdf-container">
-                <div className="resume-preview-content">
-                  <div className="resume-preview-header">
-                    <div className="resume-preview-title">
-                      <h4>Resume Preview</h4>
-                      <span className="resume-preview-subtitle">Click below to view full PDF</span>
-                    </div>
-                  </div>
-                  
-                  <div className="resume-preview-body">
-                    <div className="resume-thumbnail">
-                      <div className="resume-page">
-                        <div className="resume-header-preview">
-                          <div className="resume-name-preview">Emaad Qazi</div>
-                          <div className="resume-title-preview">Fullstack Developer</div>
-                          <div className="resume-contact-preview">
-                            <span>emaadqazi.dev@gmail.com</span>
-                            <span>github.com/emaadqazi</span>
-                          </div>
-                        </div>
-                        <div className="resume-content-preview">
-                          <div className="resume-section">
-                            <h5>Experience</h5>
-                            <p>Software Engineering roles at Samsung, LCS, and Apple...</p>
-                          </div>
-                          <div className="resume-section">
-                            <h5>Skills</h5>
-                            <p>React, Node.js, Python, MongoDB, AWS...</p>
-                          </div>
-                          <div className="resume-section">
-                            <h5>Education</h5>
-                            <p>Computer Science background with strong technical foundation...</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="resume-preview-footer">
+                <div className="pdf-preview-wrapper">
+                  <iframe
+                    src="/resume/Resume - Software Engineering, Emaad.pdf"
+                    className="pdf-preview-iframe"
+                    title="Resume Preview"
+                  />
+                  <div className="pdf-overlay">
                     <a 
-                      href="assets/resume/Resume - Software Engineering, Emaad.pdf" 
+                      href="/resume/Resume - Software Engineering, Emaad.pdf" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="btn btn-primary pdf-view-btn"

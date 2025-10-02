@@ -48,7 +48,7 @@
 
 .hero-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.8fr 1.2fr;
   gap: 4rem;
   align-items: center;
   width: 100%;
@@ -115,7 +115,7 @@
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
   padding: 14px 32px;
   border: none;
   border-radius: 8px;
@@ -744,48 +744,61 @@
   margin-bottom: 0;
 }
 
-/* Resume Section */
+/* Resume Section - Updated with PDF Preview */
 .resume-section {
-  background: linear-gradient(135deg, rgba(128, 128, 128, 0.02) 0%, transparent 50%);
+  background: var(--primary-black);
+  padding: 5rem 2rem;
+  position: relative;
 }
 
 .resume-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: stretch;
-  max-width: 1200px;
+  grid-template-columns: 0.6fr 1.4fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1600px;
   margin: 0 auto;
-  min-height: 500px;
 }
 
 .resume-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem;
+  padding: 2rem 0;
 }
 
 .resume-info h3 {
-  font-size: 2.2rem;
-  font-weight: 600;
+  font-size: 2.5rem;
+  font-weight: 700;
   color: var(--text-white);
   margin-bottom: 1.5rem;
   line-height: 1.2;
 }
 
 .resume-info p {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: var(--text-gray);
-  line-height: 1.6;
+  line-height: 1.7;
   margin-bottom: 2.5rem;
   opacity: 0.9;
 }
 
 .resume-actions {
   display: flex;
-  gap: 1.2rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
+  align-items: stretch; /* Add this */
+}
+
+.resume-actions .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 14px 28px;
+  min-width: 220px; /* Add this - ensures consistent button width */
+  white-space: nowrap; /* Add this - prevents text wrapping */
+  height: 52px;
 }
 
 .resume-preview {
@@ -797,215 +810,136 @@
   backdrop-filter: blur(10px);
 }
 
-.resume-preview::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(128, 128, 128, 0.1), transparent);
-  transition: left 0.6s ease;
-  z-index: 1;
-}
-
-.resume-preview:hover::before {
-  left: 100%;
-}
-
 .pdf-container {
   position: relative;
-  z-index: 2;
   background: var(--secondary-black);
-  border-radius: 15px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--border-grey);
-  padding: 0;
-}
-
-.resume-preview-content {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  min-height: 500px;
 }
 
 .resume-preview-header {
-  padding: 2rem 2rem 1rem 2rem;
+  padding: 2rem;
   text-align: center;
+  background: linear-gradient(180deg, rgba(128, 128, 128, 0.05) 0%, transparent 100%);
+  border-bottom: 1px solid var(--border-grey);
 }
 
-.resume-preview-title h4 {
+.resume-preview-header h4 {
   color: var(--text-white);
   margin: 0 0 0.5rem 0;
   font-size: 1.5rem;
   font-weight: 600;
 }
 
-.resume-preview-subtitle {
+.resume-preview-header p {
   color: var(--accent-grey);
-  font-size: 1rem;
+  font-size: 0.95rem;
+  margin: 0;
   opacity: 0.8;
 }
 
-.resume-preview-body {
-  flex: 1;
-  padding: 0 2rem 2rem 2rem;
+.pdf-preview-wrapper {
+  position: relative;
+  width: 100%;
+  height: 850px;
+  background: #f5f5f5;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.resume-thumbnail {
+.pdf-preview-iframe {
   width: 100%;
-  max-width: 320px;
-  margin: 0 auto;
+  height: 100%;
+  border: none;
+  transform-origin: center center;
 }
 
-.resume-page {
-  background: white;
-  border-radius: 12px;
+.pdf-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   padding: 2rem;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  transform: perspective(1000px) rotateY(-3deg) rotateX(2deg);
-  transition: all 0.4s ease;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.resume-page:hover {
-  transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.03);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
-}
-
-.resume-header-preview {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid #e8e8e8;
-}
-
-.resume-name-preview {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #2c3e50;
-  margin-bottom: 0.4rem;
-  letter-spacing: 0.5px;
-}
-
-.resume-title-preview {
-  font-size: 1.1rem;
-  color: #7f8c8d;
-  margin-bottom: 1rem;
-  font-weight: 500;
-}
-
-.resume-contact-preview {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 50%, transparent 100%);
   display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  font-size: 0.85rem;
-  color: #95a5a6;
-  font-weight: 400;
-}
-
-.resume-content-preview {
-  font-size: 0.85rem;
-  color: #34495e;
-  line-height: 1.5;
-}
-
-.resume-section {
-  margin-bottom: 1.2rem;
-}
-
-.resume-section h5 {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #2c3e50;
-  margin: 0 0 0.4rem 0;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  border-bottom: 1px solid #ecf0f1;
-  padding-bottom: 0.3rem;
-}
-
-.resume-section p {
-  margin: 0;
-  line-height: 1.5;
-  font-weight: 400;
-}
-
-.resume-preview-footer {
-  padding: 1.5rem 2rem 2rem 2rem;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 
 .pdf-view-btn {
   background: linear-gradient(135deg, var(--accent-grey), var(--light-grey));
   color: var(--primary-black);
-  padding: 12px 24px;
-  font-size: 1rem;
+  padding: 14px 28px;
+  font-size: 1.05rem;
   font-weight: 600;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  text-decoration: none;
+  border-radius: 10px;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.8rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(128, 128, 128, 0.3);
+  border: none;
+  text-decoration: none;
 }
 
 .pdf-view-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(128, 128, 128, 0.3);
+  box-shadow: 0 6px 20px rgba(128, 128, 128, 0.5);
+  background: linear-gradient(135deg, var(--light-grey), #b0b0b0);
 }
 
 /* Mobile Responsive for Resume Section */
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   .resume-content {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    min-height: auto;
+    gap: 3rem;
   }
   
   .resume-info {
-    padding: 1.5rem;
+    padding: 1.5rem 0;
     text-align: center;
-  }
-  
-  .resume-info h3 {
-    font-size: 1.8rem;
   }
   
   .resume-actions {
     justify-content: center;
   }
   
-  .resume-preview-content {
-    min-height: 400px;
+  .pdf-preview-wrapper {
+    height: 700px;
   }
   
-  .resume-preview-header,
-  .resume-preview-body,
-  .resume-preview-footer {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  
-  .resume-page {
+  .resume-preview-header {
     padding: 1.5rem;
-    transform: perspective(1000px) rotateY(-1deg);
   }
   
-  .resume-name-preview {
-    font-size: 1.4rem;
+  .pdf-overlay {
+    padding: 1.5rem;
   }
   
-  .resume-title-preview {
-    font-size: 1rem;
+  .resume-info h3 {
+    font-size: 2rem;
   }
 }
 
+@media (max-width: 480px) {
+  .pdf-preview-wrapper {
+    height: 600px;
+  }
+  
+  .pdf-preview-iframe {
+    transform: scale(1);
+  }
+  
+  .resume-preview-header h4 {
+    font-size: 1.3rem;
+  }
+  
+  .pdf-view-btn {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+}
 /* Contact Section */
 .contact-section {
   background: linear-gradient(135deg, rgba(128, 128, 128, 0.02) 0%, transparent 50%);
@@ -1013,7 +947,7 @@
 
 .contact-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.8fr 1.2fr;
   gap: 4rem;
   max-width: 1000px;
   margin: 0 auto;
