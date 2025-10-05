@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaCode, FaExternalLinkAlt, FaEye, FaDownload, FaPaperPlane } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaGithub, FaLinkedin, FaEnvelope, FaCode, FaExternalLinkAlt, FaEye, FaDownload, FaPaperPlane, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { FaReact, FaJs, FaHtml5, FaCss3Alt, FaBootstrap, FaNodeJs, FaPython, FaGitAlt, FaDatabase, FaServer, FaChartLine, FaCloud } from 'react-icons/fa';
-import { SiExpress, SiFlask } from 'react-icons/si';
+import { SiExpress, SiFlask, SiMongodb, SiPostgresql, SiMysql, SiFirebase } from 'react-icons/si';
 import './SinglePage.css';
 
 const SinglePage = () => {
@@ -11,6 +11,10 @@ const SinglePage = () => {
     email: '',
     message: ''
   });
+
+  // Carousel state for skills section
+  const [currentSkillIndex, setCurrentSkillIndex] = useState(0);
+  const [skillDirection, setSkillDirection] = useState(0);
 
   // Projects data
   const projects = [
@@ -60,39 +64,71 @@ const SinglePage = () => {
     }
   ];
 
-  // Skills data
-  const skillsData = [
+  // Skills data for carousel
+  const skillCategories = [
     {
-      category: "Frontend",
-      icon: <FaReact />,
+      id: 'languages',
+      title: 'Programming Languages',
+      icon: '💻',
       skills: [
-        { name: "React", icon: <FaReact style={{color: '#61dafb'}} /> },
-        { name: "JavaScript", icon: <FaJs style={{color: '#f7df1e'}} /> },
-        { name: "HTML5", icon: <FaHtml5 style={{color: '#e34c26'}} /> },
-        { name: "CSS3", icon: <FaCss3Alt style={{color: '#1572b6'}} /> },
-        { name: "Bootstrap", icon: <FaBootstrap style={{color: '#7952b3'}} /> }
+        { name: 'Python', icon: <FaPython style={{color: '#3776ab'}} /> },
+        { name: 'Java', icon: <FaCode style={{color: '#f89820'}} /> },
+        { name: 'JavaScript', icon: <FaJs style={{color: '#f7df1e'}} /> },
+        { name: 'TypeScript', icon: <FaCode style={{color: '#3178c6'}} /> },
+        { name: 'C', icon: <FaCode style={{color: '#a8b9cc'}} /> },
+        { name: 'HTML', icon: <FaHtml5 style={{color: '#e34c26'}} /> },
+        { name: 'CSS', icon: <FaCss3Alt style={{color: '#1572b6'}} /> },
+        { name: 'SQL', icon: <FaDatabase style={{color: '#4479a1'}} /> },
+        { name: 'VBA', icon: <FaChartLine style={{color: '#217346'}} /> },
+        { name: 'Swift', icon: <FaCode style={{color: '#f05138'}} /> }
       ]
     },
     {
-      category: "Backend",
-      icon: <FaServer />,
+      id: 'frameworks',
+      title: 'Frameworks & Libraries',
+      icon: '⚛️',
       skills: [
-        { name: "Node.js", icon: <FaNodeJs style={{color: '#339933'}} /> },
-        { name: "Python", icon: <FaPython style={{color: '#3776ab'}} /> },
-        { name: "MongoDB", icon: <FaDatabase style={{color: '#4db33d'}} /> },
-        { name: "Express.js", icon: <SiExpress style={{color: '#000000'}} /> },
-        { name: "Flask", icon: <SiFlask style={{color: '#000000'}} /> }
+        { name: 'React', icon: <FaReact style={{color: '#61dafb'}} /> },
+        { name: 'Node.js', icon: <FaNodeJs style={{color: '#339933'}} /> },
+        { name: 'Express.js', icon: <SiExpress style={{color: '#ffffff'}} /> },
+        { name: 'Flask', icon: <SiFlask style={{color: '#ffffff'}} /> },
+        { name: 'Bootstrap', icon: <FaBootstrap style={{color: '#7952b3'}} /> }
       ]
     },
     {
-      category: "Tools & Platforms",
-      icon: <FaCode />,
+      id: 'databases',
+      title: 'Databases',
+      icon: '🗄️',
       skills: [
-        { name: "Git", icon: <FaGitAlt style={{color: '#f05032'}} /> },
-        { name: "GitHub", icon: <FaGithub style={{color: '#333'}} /> },
-        { name: "Railway", icon: <FaCloud style={{color: '#007acc'}} /> },
-        { name: "VBA", icon: <FaCode style={{color: '#e34c26'}} /> },
-        { name: "Power Query", icon: <FaChartLine style={{color: '#ff6b35'}} /> }
+        { name: 'MongoDB', icon: <SiMongodb style={{color: '#47a248'}} /> },
+        { name: 'PostgreSQL', icon: <SiPostgresql style={{color: '#4169e1'}} /> },
+        { name: 'MySQL', icon: <SiMysql style={{color: '#4479a1'}} /> },
+        { name: 'Firebase', icon: <SiFirebase style={{color: '#ffca28'}} /> },
+        { name: 'Supabase', icon: <FaDatabase style={{color: '#3ecf8e'}} /> }
+      ]
+    },
+    {
+      id: 'devops',
+      title: 'DevOps & Cloud',
+      icon: '☁️',
+      skills: [
+        { name: 'Git', icon: <FaGitAlt style={{color: '#f05032'}} /> },
+        { name: 'GitHub', icon: <FaGithub style={{color: '#ffffff'}} /> },
+        { name: 'Railway', icon: <FaServer style={{color: '#a855f7'}} /> },
+        { name: 'AWS', icon: <FaCloud style={{color: '#ff9900'}} /> },
+        { name: 'Docker', icon: <FaServer style={{color: '#2496ed'}} /> }
+      ]
+    },
+    {
+      id: 'tools',
+      title: 'Tools & Analytics',
+      icon: '🛠️',
+      skills: [
+        { name: 'Power Query', icon: <FaChartLine style={{color: '#ff6b35'}} /> },
+        { name: 'VBA', icon: <FaChartLine style={{color: '#217346'}} /> },
+        { name: 'Excel', icon: <FaChartLine style={{color: '#217346'}} /> },
+        { name: 'Tableau', icon: <FaChartLine style={{color: '#e97627'}} /> },
+        { name: 'Power BI', icon: <FaChartLine style={{color: '#f2c811'}} /> }
       ]
     }
   ];
@@ -101,32 +137,30 @@ const SinglePage = () => {
   const experiences = [
     {
       id: 1,
-      company: "Samsung Electronics Canada",
-      position: "SCM Operations Co-op - CE Division",
-      duration: "May 2025 - Present",
+      company: "Samsung",
+      position: "Software Analytics - SCM Team",
+      duration: "May 2025 - August 2025",
       logo: "images/SamsungLogo.png",
       achievements: [
-        "Managed daily data pipeline operations through SQL table refreshes and Power Query automation, providing essential reporting to 200+ stakeholders across a $350M+ monthly business division",
-        "Developed and implemented VBA automation script for cross-shipping operations between East/West warehouses, reducing manual processing time by 200+ hours monthly in HE division",
-        "Built automated KPI dashboard using VBA and Power Query for DA Sales KAM team, improving forecast accuracy by 27% through real-time data integration"
+        "Worked on the Consumer Electronics team to automate supply chain processes, handling data of $400M revenue/month + $150M inventory/month"
       ]
     },
     {
       id: 2,
       company: "Laurier Supply Chain Association",
-      position: "VP of Software Development",
+      position: "VP, Software & Product",
       duration: "May 2025 - Present",
       logo: "images/LSCALogo.jpg",
       achievements: [
-        "Revamping the new LSCA website, coming October 2025"
+        "Leading a team of 3 developers to revamp LSCA's website. Coming soon."
       ]
     },
     {
       id: 3,
       company: "Laurier Computing Society",
-      position: "Academics, Content Writer",
+      position: "Director, Academics",
       duration: "January 2025 - Present",
-      logo: "images/LCSLogo.jpg",
+      logo: "images/LCS Logo.jpeg",
       achievements: [
         "Led comprehensive exam review sessions for 150+ students across multiple computer science courses (CP220, CP213, CP264, CP363, CP216), covering data structures, algorithms, and programming fundamentals",
         "Designed and delivered technical presentation materials with live coding demonstrations, breaking down complex programming concepts for enhanced student comprehension",
@@ -135,14 +169,13 @@ const SinglePage = () => {
     },
     {
       id: 4,
-      company: "Apple Canada",
-      position: "Application Developer Co-op",
+      company: "Apple",
+      position: "Software Engineering Co-op",
       duration: "December 2021 - February 2022",
       logo: "images/AppleLogo.jpg",
       achievements: [
-        "Completed intensive mobile development co-op obtained through Halton Industry Education Council (HIEC) as part of my ICT SHSM certification, gaining hands-on experience in iOS development and industry best practices",
-        "Developed LiftEats, a comprehensive fitness tracking mobile application using Swift and Xcode, featuring real-time Apple Watch integration for activity monitoring with 95% data accuracy",
-        "Presented LiftEats to Apple Canada executives and 500+ industry professionals in a high-stakes 8-minute pitch session, earning recognition from judges and securing mentorship opportunities"
+        "Completed co-op credit at Apple for my Information Communcation Technology (ICT) Specialized High Skills Major (SHSM) certification",
+        "Collaborated with 2 other students to prototype an app using Xcode and Swift, presenting final project to Apple representatives"
       ]
     }
   ];
@@ -160,6 +193,29 @@ const SinglePage = () => {
     setFormData({ name: '', email: '', message: '' });
     alert('Message sent successfully!');
   };
+
+  // Carousel pagination function
+  const paginate = (newDirection) => {
+    setSkillDirection(newDirection);
+    setCurrentSkillIndex((prevIndex) => {
+      const newIndex = prevIndex + newDirection;
+      // Infinite loop logic
+      if (newIndex >= skillCategories.length) return 0;
+      if (newIndex < 0) return skillCategories.length - 1;
+      return newIndex;
+    });
+  };
+
+  // Keyboard navigation for carousel
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (e.key === 'ArrowLeft') paginate(-1);
+      if (e.key === 'ArrowRight') paginate(1);
+    };
+    
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -181,6 +237,33 @@ const SinglePage = () => {
         duration: 0.6
       }
     }
+  };
+
+  // Carousel slide variants
+  const slideVariants = {
+    enter: (direction) => ({
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+      scale: 0.8
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.5,
+        ease: 'easeInOut'
+      }
+    },
+    exit: (direction) => ({
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0,
+      scale: 0.8,
+      transition: {
+        duration: 0.5,
+        ease: 'easeInOut'
+      }
+    })
   };
 
   return (
@@ -307,31 +390,25 @@ const SinglePage = () => {
                 className="about-bio"
                 variants={itemVariants}
               >
-                Hey! My name is Emaad and I am a 3A Double Degree student in Business Administration and Computer Science @ Wilfrid Laurier University, planning to specialize in Finance and Machine Learning/AI. Currently seeking Winter 2026 positions.
+                3A Double Degree Business Administration (BBA) and Computer Science (BSc) @ Wilfrid Laurier University in Waterloo, Ontario
               </motion.p>
               
-              <motion.p 
-                className="about-bio"
-                variants={itemVariants}
+              <motion.ui className='about-list' variants={itemVariants}>
+                <li>Currently seeking Winter 2026 internship opportunities</li>
+                <li>Finished Summer 2025 co-op @ Samsung in Sotware Analytics on the Supply Chain Management team for the Consumer Electronics division</li>
+                <li>Previously interned @ Apple as a Software Engineering Intern during my high school ICT SHSM co-op</li>
+                <li>Placed 2nd amongst 300+ teams with 1500+ participants @ Spurhacks 2025, winning $2500</li>
+                <li>Enjoy attending hackathons and solving complex business problems with software based solutions</li>
+              </motion.ui>
+
+              <motion.p
+              className="about-bio contact-info"
+              variants={itemVariants}
               >
-                I just finished my co-op term at Samsung working in Supply Chain Analytics for the Consumer Electronics Division, and I've interned at Apple Canada in the past during my Information Communication Technology SHSM during high school.
-              </motion.p>
-              
-              <motion.p 
-                className="about-bio"
-                variants={itemVariants}
-              >
-                Most recently, my team was able to place 2nd amongst 190+ other teams at Spurhacks 2025 in Waterloo, Ontario. I also attended IgnitionHacks at TMU, and I'm getting ready for Hack The Valley in October.
-              </motion.p>
-              
-              <motion.p 
-                className="about-bio contact-info"
-                variants={itemVariants}
-              >
-                Please feel free to reach out and connect: 
+                Please feel free to reach out and connect:
                 <a href="mailto:emaadqazi.dev@gmail.com" className="email-link">
                   emaadqazi.dev@gmail.com
-                </a>
+                  </a>
               </motion.p>
             </motion.div>
           </motion.div>
@@ -417,7 +494,7 @@ const SinglePage = () => {
       {/* Skills Section */}
       <section id="skills" className="section skills-section">
         <div className="container">
-          <motion.h2 
+          <motion.h2
             className="section-title"
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -426,53 +503,77 @@ const SinglePage = () => {
           >
             Skills & Technologies
           </motion.h2>
-          
-          <motion.div 
-            className="skills-grid"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {skillsData.map((category, categoryIndex) => (
-              <motion.div 
-                key={category.category}
-                className="skills-category"
-                variants={itemVariants}
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="category-header">
-                  <div className="category-icon">
-                    {category.icon}
+
+          <div className="skills-carousel-container">
+            {/* Navigation Buttons */}
+            <button
+              className="carousel-button carousel-button-left"
+              onClick={() => paginate(-1)}
+              aria-label="Previous category"
+            >
+              <FaChevronLeft size={32} />
+            </button>
+
+            {/* Carousel Content */}
+            <div className="carousel-wrapper">
+              <AnimatePresence initial={false} custom={skillDirection} mode="wait">
+                <motion.div
+                  key={currentSkillIndex}
+                  custom={skillDirection}
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  className="skill-category-card"
+                >
+                  <div className="category-header">
+                    <div className="category-icon-circle">
+                      <span className="category-icon">{skillCategories[currentSkillIndex].icon}</span>
+                    </div>
+                    <h3 className="category-title">{skillCategories[currentSkillIndex].title}</h3>
                   </div>
-                  <h3 className="category-title">{category.category}</h3>
-                </div>
-                
-                <div className="skills-list">
-                  {category.skills.map((skill, skillIndex) => (
-                    <motion.div 
-                      key={skill.name}
-                      className="skill-item"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ 
-                        duration: 0.4, 
-                        delay: categoryIndex * 0.2 + skillIndex * 0.1 
-                      }}
-                      viewport={{ once: true }}
-                      whileHover={{ scale: 1.05, x: 5 }}
-                    >
-                      <div className="skill-icon">
-                        {skill.icon}
-                      </div>
-                      <span className="skill-name">{skill.name}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
+
+                  <div className="skills-grid">
+                    {skillCategories[currentSkillIndex].skills.map((skill, idx) => (
+                      <motion.div
+                        key={idx}
+                        className="skill-item"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: idx * 0.1 }}
+                      >
+                        <span className="skill-icon">{skill.icon}</span>
+                        <span className="skill-name">{skill.name}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            <button
+              className="carousel-button carousel-button-right"
+              onClick={() => paginate(1)}
+              aria-label="Next category"
+            >
+              <FaChevronRight size={32} />
+            </button>
+          </div>
+
+          {/* Pagination Dots */}
+          <div className="carousel-dots">
+            {skillCategories.map((_, idx) => (
+              <button
+                key={idx}
+                className={`dot ${idx === currentSkillIndex ? 'active' : ''}`}
+                onClick={() => {
+                  setSkillDirection(idx > currentSkillIndex ? 1 : -1);
+                  setCurrentSkillIndex(idx);
+                }}
+                aria-label={`Go to ${skillCategories[idx].title}`}
+              />
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
