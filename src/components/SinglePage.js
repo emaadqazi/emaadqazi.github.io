@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaCode, FaExternalLinkAlt, FaEye, FaDownload, FaPaperPlane, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { FaReact, FaJs, FaHtml5, FaCss3Alt, FaBootstrap, FaNodeJs, FaPython, FaGitAlt, FaDatabase, FaServer, FaChartLine, FaCloud } from 'react-icons/fa';
@@ -195,7 +195,7 @@ const SinglePage = () => {
   };
 
   // Carousel pagination function
-  const paginate = (newDirection) => {
+  const paginate = useCallback((newDirection) => {
     setSkillDirection(newDirection);
     setCurrentSkillIndex((prevIndex) => {
       const newIndex = prevIndex + newDirection;
@@ -204,7 +204,7 @@ const SinglePage = () => {
       if (newIndex < 0) return skillCategories.length - 1;
       return newIndex;
     });
-  };
+  }, [skillCategories.length]);
 
   // Keyboard navigation for carousel
   useEffect(() => {
@@ -215,7 +215,7 @@ const SinglePage = () => {
     
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, []);
+  }, [paginate]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
