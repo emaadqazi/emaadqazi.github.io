@@ -137,6 +137,26 @@ const SinglePage = () => {
   const experiences = [
     {
       id: 1,
+      company: "IBM",
+      position: "Software Engineer - Data & AI Team",
+      duration: "May 2026 - September 2027",
+      logo: "images/IBM_logo.png",
+      achievements: [
+        "Incoming Summer 2026"
+      ]
+    },
+    {
+      id: 2,
+      company: "Mattamy Homes",
+      position: "Data Analytics - IT Enterprise Services",
+      duration: "January 2026 - April 2026",
+      logo: "images/MH_Logo.jpg",
+      achievements: [
+        "Incoming Winter 2026"
+      ]
+    },
+    {
+      id: 3,
       company: "Samsung",
       position: "Software Analytics - SCM Team",
       duration: "May 2025 - August 2025",
@@ -146,7 +166,7 @@ const SinglePage = () => {
       ]
     },
     {
-      id: 2,
+      id: 4,
       company: "Laurier Supply Chain Association",
       position: "VP, Software & Product",
       duration: "May 2025 - Present",
@@ -156,7 +176,7 @@ const SinglePage = () => {
       ]
     },
     {
-      id: 3,
+      id: 5,
       company: "Laurier Computing Society",
       position: "Director, Academics",
       duration: "January 2025 - Present",
@@ -168,7 +188,7 @@ const SinglePage = () => {
       ]
     },
     {
-      id: 4,
+      id: 6,
       company: "Apple",
       position: "Software Engineering Co-op",
       duration: "December 2021 - February 2022",
@@ -611,7 +631,7 @@ const SinglePage = () => {
                     <img 
                       src={experience.logo} 
                       alt={experience.company} 
-                      className="company-logo"
+                      className={`company-logo ${experience.company === 'Samsung' ? 'samsung-logo' : ''} ${experience.company === 'IBM' ? 'ibm-logo' : ''} ${experience.company === 'Mattamy Homes' ? 'mattamy-logo' : ''}`}
                     />
                     <div className="experience-info">
                       <h3 className="company-name">{experience.company}</h3>

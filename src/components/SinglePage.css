@@ -812,10 +812,26 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;
   border: 2px solid var(--accent-grey);
   background: var(--primary-black);
   padding: 5px;
+}
+
+.samsung-logo {
+  object-fit: cover;
+}
+
+.ibm-logo {
+  object-fit: contain;
+  padding: 8px;
+  background: white;
+}
+
+.mattamy-logo {
+  object-fit: contain;
+  padding: 0px;
+  background: white;
 }
 
 .experience-info {
