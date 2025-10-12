@@ -414,7 +414,8 @@ const SinglePage = () => {
               </motion.p>
               
               <motion.ui className='about-list' variants={itemVariants}>
-                <li>Currently seeking Winter 2026 internship opportunities</li>
+                <li>Incoming Data Analytics Co-op @ Mattamy Homes, Winter 2026</li>
+                <li>Incoming Software Engineering Intern @ IBM, Summer 2026</li>
                 <li>Finished Summer 2025 co-op @ Samsung in Sotware Analytics on the Supply Chain Management team for the Consumer Electronics division</li>
                 <li>Previously interned @ Apple as a Software Engineering Intern during my high school ICT SHSM co-op</li>
                 <li>Placed 2nd amongst 300+ teams with 1500+ participants @ Spurhacks 2025, winning $2500</li>
