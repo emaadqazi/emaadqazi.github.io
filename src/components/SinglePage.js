@@ -1,16 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaCode, FaExternalLinkAlt, FaEye, FaDownload, FaPaperPlane, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaCode, FaExternalLinkAlt, FaEye, FaDownload, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { FaReact, FaJs, FaHtml5, FaCss3Alt, FaBootstrap, FaNodeJs, FaPython, FaGitAlt, FaDatabase, FaServer, FaChartLine, FaCloud } from 'react-icons/fa';
 import { SiExpress, SiFlask, SiMongodb, SiPostgresql, SiMysql, SiFirebase } from 'react-icons/si';
 import './SinglePage.css';
 
 const SinglePage = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
 
   // Carousel state for skills section
   const [currentSkillIndex, setCurrentSkillIndex] = useState(0);
@@ -199,20 +194,6 @@ const SinglePage = () => {
       ]
     }
   ];
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    setFormData({ name: '', email: '', message: '' });
-    alert('Message sent successfully!');
-  };
 
   // Carousel pagination function
   const paginate = useCallback((newDirection) => {
@@ -731,7 +712,7 @@ const SinglePage = () => {
       {/* Contact Section */}
       <section id="contact" className="section contact-section">
         <div className="container">
-          <motion.h2 
+          <motion.h2
             className="section-title"
             initial={{ opacity: 0, y: -30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -740,24 +721,24 @@ const SinglePage = () => {
           >
             Get In Touch
           </motion.h2>
-          
-          <motion.div 
-            className="contact-content"
+
+          <motion.div
+            className="contact-content-centered"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <motion.div 
+            <motion.div
               className="contact-info"
               variants={itemVariants}
             >
               <h3>Let's Connect</h3>
               <p>I'm always interested in new opportunities and collaborations. Feel free to reach out!</p>
-              
+
               <div className="contact-links">
-                <a 
-                  href="mailto:emaadqazi.dev@gmail.com" 
+                <a
+                  href="mailto:emaadqazi.dev@gmail.com"
                   className="contact-link"
                 >
                   <div className="contact-icon">
@@ -768,10 +749,10 @@ const SinglePage = () => {
                     <span className="contact-value">emaadqazi.dev@gmail.com</span>
                   </div>
                 </a>
-                
-                <a 
-                  href="https://github.com/emaadqazi" 
-                  target="_blank" 
+
+                <a
+                  href="https://github.com/emaadqazi"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="contact-link"
                 >
@@ -783,10 +764,10 @@ const SinglePage = () => {
                     <span className="contact-value">github.com/emaadqazi</span>
                   </div>
                 </a>
-                
-                <a 
-                  href="https://www.linkedin.com/in/emaadqazi" 
-                  target="_blank" 
+
+                <a
+                  href="https://www.linkedin.com/in/emaadqazi"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="contact-link"
                 >
@@ -799,51 +780,6 @@ const SinglePage = () => {
                   </div>
                 </a>
               </div>
-            </motion.div>
-            
-            <motion.div 
-              className="contact-form"
-              variants={itemVariants}
-            >
-              <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Your Name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                
-                <div className="form-group">
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Your Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                
-                <div className="form-group">
-                  <textarea
-                    name="message"
-                    placeholder="Your Message"
-                    rows="5"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                
-                <button type="submit" className="btn btn-primary submit-btn">
-                  <FaPaperPlane />
-                  Send Message
-                </button>
-              </form>
             </motion.div>
           </motion.div>
         </div>
