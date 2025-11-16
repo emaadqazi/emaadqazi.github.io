@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaCode, FaExternalLinkAlt, FaEye, FaDownload, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import { FaReact, FaJs, FaHtml5, FaCss3Alt, FaBootstrap, FaNodeJs, FaPython, FaGitAlt, FaDatabase, FaServer, FaChartLine, FaCloud } from 'react-icons/fa';
-import { SiExpress, SiFlask, SiMongodb, SiPostgresql, SiMysql, SiFirebase } from 'react-icons/si';
+import { SiExpress, SiFlask, SiMongodb, SiPostgresql, SiMysql, SiFirebase, SiDevpost } from 'react-icons/si';
 import './SinglePage.css';
 
 const SinglePage = () => {
@@ -20,6 +20,7 @@ const SinglePage = () => {
       image: "images/FitnessTrackerProject.png",
       liveUrl: "https://fitness-tracker-emaadqazi.up.railway.app",
       githubUrl: "https://github.com/emaadqazi/Fitness-Tracker",
+      devpostUrl: null,
       technologies: ["Flask", "Supabase", "SQLAlchemy", "Bootstrap 5", "Chart.js"],
       date: "March 2025 - June 2025",
       badge: null
@@ -31,6 +32,7 @@ const SinglePage = () => {
       image: "images/FitQuestProject.png",
       liveUrl: "https://algorithmathletes-production.up.railway.app/login",
       githubUrl: "https://github.com/AhmadYahya-05/AlgorithmAthletes",
+      devpostUrl: "https://devpost.com/software/fitness-quest-31h2ci",
       technologies: ["MongoDB", "Express.js", "React", "Node.js", "Gemini"],
       date: "June 20th Weekend, 2025",
       badge: "2nd Place Hack Track - $2500 (190+ teams)"
@@ -42,6 +44,7 @@ const SinglePage = () => {
       image: "images/MernNotesProject.png",
       liveUrl: "https://notesmernstack.onrender.com/",
       githubUrl: "https://github.com/emaadqazi/NotesMERNStack",
+      devpostUrl: null,
       technologies: ["MongoDB", "Express.js", "React", "Node.js", "Javascript"],
       date: "June 2025",
       badge: null
@@ -53,6 +56,7 @@ const SinglePage = () => {
       image: "images/MindfulHarmonyProject.jpeg",
       liveUrl: "https://ignition-hacks-copy-production.up.railway.app/login",
       githubUrl: "https://github.com/sarahhalime/Mindful-Harmony",
+      devpostUrl: "https://devpost.com/software/binary-bandits",
       technologies: ["MongoDB", "Python (Flask)", "React", "Node.js", "Gemini"],
       date: "August 15th Weekend, 2025",
       badge: "Contender for Best Pitch"
@@ -64,6 +68,7 @@ const SinglePage = () => {
       image: "images/MissionEmployedThumbnail.png",
       liveUrl: "https://aware-creation-production.up.railway.app/",
       githubUrl: "https://github.com/emaadqazi/TrentHacks2025",
+      devpostUrl: "https://devpost.com/software/resume-ai-rt8lie?ref_content=user-portfolio&ref_feature=in_progress",
       technologies: ["Supabase", "NodeJS", "Typescript", "React", "TailwindCSS", "Python"],
       date: "November 8th weekend, 2025",
       badge: null
@@ -75,6 +80,7 @@ const SinglePage = () => {
       image: "images/ShopCP340Thumbnail.png",
       liveUrl: "https://emaadqazi.com/CP340_Website/",
       githubUrl: "https://github.com/emaadqazi/CP340_Website?tab=readme-ov-file",
+      devpostUrl: null,
       technologies: ["React", "CSS", "JavaScript", "HTML"],
       date: "Fall 2025",
       badge: null
@@ -86,6 +92,7 @@ const SinglePage = () => {
       image: "images/ChessHacksThumbnail.png",
       liveUrl: null,
       githubUrl: "https://github.com/Deeppcodes/chess-bot",
+      devpostUrl: null,
       technologies: ["PyTorch", "TensorFlow", "Modal (Cloud GPU)", "FastAPI", "Python-Chess"],
       date: "November 14th weekend, 2025",
       badge: null
@@ -94,9 +101,10 @@ const SinglePage = () => {
       id: 8,
       title: "Investors Arena",
       description: "Fantasy trading/portfolio platform for CP317, Software Engineering @ Laurier",
-      image: "InvestorsArenaThumbnail.jpg",
+      image: "images/InvestorsArenaThumbnail.jpg",
       liveUrl: "https://emaadqazi.com/InvestorsArena/#/login",
       githubUrl: "https://github.com/emaadqazi/InvestorsArena",
+      devpostUrl: null,
       technologies: ["React", "NodeJS", "Alpha Vintage API", "Firebase", "PostgresSQL"],
       date: "Fall 2025",
       badge: null
@@ -105,9 +113,10 @@ const SinglePage = () => {
       id: 9,
       title: "Laurier Supply Chain Association",
       description: "Built out website for LSCA club @ Laurier",
-      image: "LSCA-Thumbnail.png",
+      image: "images/LSCA-Thumbnail.png",
       liveUrl: "https://emaadqazi.com/LSCA-Website/",
       githubUrl: "https://github.com/emaadqazi/LSCA-Website",
+      devpostUrl: null,
       technologies: ["TypeScript", "CSS", "HTML", "JavaScript"],
       date: "Fall 2025",
       badge: null
@@ -212,7 +221,7 @@ const SinglePage = () => {
       duration: "May 2025 - August 2025",
       logo: "images/SamsungLogo.png",
       achievements: [
-        "Worked on the Consumer Electronics team to automate supply chain processes, handling data of $400M revenue/month + $150M inventory/month"
+        "Worked in the Consumer Electronics Division on the Supply Chain Management team"
       ]
     },
     {
@@ -222,7 +231,7 @@ const SinglePage = () => {
       duration: "May 2025 - Present",
       logo: "images/LSCALogo.jpg",
       achievements: [
-        "Leading a team of 3 developers to revamp LSCA's website. Coming soon."
+        "Leading a team of 3 developers to revamp LSCA's website"
       ]
     },
     {
@@ -232,20 +241,17 @@ const SinglePage = () => {
       duration: "January 2025 - Present",
       logo: "images/LCS Logo.jpeg",
       achievements: [
-        "Led comprehensive exam review sessions for 150+ students across multiple computer science courses (CP220, CP213, CP264, CP363, CP216), covering data structures, algorithms, and programming fundamentals",
-        "Designed and delivered technical presentation materials with live coding demonstrations, breaking down complex programming concepts for enhanced student comprehension",
-        "Facilitated interactive coding workshops demonstrating real-time problem-solving techniques and best practices in software development"
+        "Preparing slides and teaching review sessions for core 1st/2nd year CS courses to 100+ students/session"
       ]
     },
     {
       id: 6,
-      company: "Apple",
+      company: "Apple (ICT SHSM Co-op)",
       position: "Software Engineering Co-op",
       duration: "December 2021 - February 2022",
       logo: "images/AppleLogo.jpg",
       achievements: [
-        "Completed co-op credit at Apple for my Information Communcation Technology (ICT) Specialized High Skills Major (SHSM) certification",
-        "Collaborated with 2 other students to prototype an app using Xcode and Swift, presenting final project to Apple representatives"
+        "Completed co-op credit at Apple for my Information Communcation Technology (ICT) Specialized High Skills Major (SHSM) certification during highschool"
       ]
     }
   ];
@@ -501,25 +507,48 @@ const SinglePage = () => {
                 transition={{ duration: 0.3 }}
               >
                 <div className="project-image">
-                  <img src={project.image} alt={project.title} />
+                  <img
+                    src={project.image}
+                    srcSet={project.image2x ? `${project.image} 1x, ${project.image2x} 2x` : undefined}
+                    alt={project.title}
+                    loading="lazy"
+                    onError={(e) => {
+                      // fallback to a placeholder SVG if the src fails to load
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = 'images/placeholder.svg';
+                    }}
+                  />
                   <div className="project-overlay">
                     <div className="project-links">
-                      <a 
-                        href={project.liveUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="project-link"
-                      >
-                        <FaExternalLinkAlt />
-                      </a>
-                      <a 
-                        href={project.githubUrl} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="project-link"
-                      >
-                        <FaGithub />
-                      </a>
+                      {project.liveUrl ? (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="project-link"
+                        >
+                          <FaExternalLinkAlt />
+                        </a>
+                      ) : (
+                        <span className="project-link disabled" title="No live demo">
+                          <FaExternalLinkAlt />
+                        </span>
+                      )}
+
+                      {project.githubUrl ? (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="project-link"
+                        >
+                          <FaGithub />
+                        </a>
+                      ) : (
+                        <span className="project-link disabled" title="No repository">
+                          <FaGithub />
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -542,6 +571,17 @@ const SinglePage = () => {
                   
                   <span className="project-date">{project.date}</span>
                 </div>
+                {project.devpostUrl && (
+                  <a
+                    href={project.devpostUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="devpost-link"
+                    title="View on DevPost"
+                  >
+                    <SiDevpost />
+                  </a>
+                )}
               </motion.div>
             ))}
           </motion.div>
