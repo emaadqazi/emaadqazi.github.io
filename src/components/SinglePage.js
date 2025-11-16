@@ -100,6 +100,17 @@ const SinglePage = () => {
       technologies: ["React", "NodeJS", "Alpha Vintage API", "Firebase", "PostgresSQL"],
       date: "Fall 2025",
       badge: null
+    },
+    {
+      id: 9,
+      title: "Laurier Supply Chain Association",
+      description: "Built out website for LSCA club @ Laurier",
+      image: "LSCA-Thumbnail.png",
+      liveUrl: "https://emaadqazi.com/LSCA-Website/",
+      githubUrl: "https://github.com/emaadqazi/LSCA-Website",
+      technologies: ["TypeScript", "CSS", "HTML", "JavaScript"],
+      date: "Fall 2025",
+      badge: null
     }
   ];
 
