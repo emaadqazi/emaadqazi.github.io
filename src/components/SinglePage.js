@@ -56,6 +56,50 @@ const SinglePage = () => {
       technologies: ["MongoDB", "Python (Flask)", "React", "Node.js", "Gemini"],
       date: "August 15th Weekend, 2025",
       badge: "Contender for Best Pitch"
+    },
+    {
+      id: 5,
+      title: "Mission Employed",
+      description: "Full Stack Resume Tool built @ TrentHacks 2025",
+      image: "images/MissionEmployedThumbnail.png",
+      liveUrl: "https://aware-creation-production.up.railway.app/",
+      githubUrl: "https://github.com/emaadqazi/TrentHacks2025",
+      technologies: ["Supabase", "NodeJS", "Typescript", "React", "TailwindCSS", "Python"],
+      date: "November 8th weekend, 2025",
+      badge: null
+    },
+    {
+      id: 6,
+      title: "ShopCP340",
+      description: "E-commerce site for CP340, E-commerce @ Laurier",
+      image: "images/ShopCP340Thumbnail.png",
+      liveUrl: "https://emaadqazi.com/CP340_Website/",
+      githubUrl: "https://github.com/emaadqazi/CP340_Website?tab=readme-ov-file",
+      technologies: ["React", "CSS", "JavaScript", "HTML"],
+      date: "Fall 2025",
+      badge: null
+    },
+    {
+      id: 7,
+      title: "Chess Machine Learning Model",
+      description: "Developed Chess Engine @ ChessHacks 2025",
+      image: "images/ChessHacksThumbnail.png",
+      liveUrl: null,
+      githubUrl: "https://github.com/Deeppcodes/chess-bot",
+      technologies: ["PyTorch", "TensorFlow", "Modal (Cloud GPU)", "FastAPI", "Python-Chess"],
+      date: "November 14th weekend, 2025",
+      badge: null
+    },
+    {
+      id: 8,
+      title: "Investors Arena",
+      description: "Fantasy trading/portfolio platform for CP317, Software Engineering @ Laurier",
+      image: "InvestorsArenaThumbnail.jpg",
+      liveUrl: "https://emaadqazi.com/InvestorsArena/#/login",
+      githubUrl: "https://github.com/emaadqazi/InvestorsArena",
+      technologies: ["React", "NodeJS", "Alpha Vintage API", "Firebase", "PostgresSQL"],
+      date: "Fall 2025",
+      badge: null
     }
   ];
 
